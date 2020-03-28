@@ -1,4 +1,0 @@
-# Timer constants
-BOMB_PLANTED = 1
-ROUND_OVER = 2
-TIMER_EXIT = 3

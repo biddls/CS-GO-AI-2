@@ -1,0 +1,25 @@
+{'provider': {'name': 'Counter-Strike: Global Offensive', 'appid': 730, 'version': 13745, 'steamid': '76561198064774749', 'timestamp': 1585413152},
+
+  'map': {'mode': 'competitive', 'name': 'de_dust2', 'phase': 'live', 'round': 1,
+    'team_ct': {'score': 0, 'consecutive_round_losses': 2, 'timeouts_remaining': 1, 'matches_won_this_series': 0},
+    'team_t': {'score': 1, 'consecutive_round_losses': 0, 'timeouts_remaining': 1, 'matches_won_this_series': 0},
+    'num_matches_to_win_series': 0, 'current_spectators': 0, 'souvenirs_total': 0},
+
+  'round': {'phase': 'live', 'bomb': 'planted'},
+
+  'player': {'steamid': '76561198064774749', 'name': 'Biddls ヅ', 'observer_slot': 6, 'team': 'T', 'activity': 'playing',
+    'state': {'health': 100, 'armor': 100, 'helmet': True, 'flashed': 0, 'smoked': 0, 'burning': 0, 'money': 750, 'round_kills': 0, 'round_killhs': 0, 'equip_value': 5300},
+    'weapons': {
+      'weapon_0': {'name': 'weapon_knife_t', 'paintkit': 'default', 'type': 'Knife', 'state': 'active'},
+      'weapon_1': {'name': 'weapon_hkp2000', 'paintkit': 'default', 'type': 'Pistol', 'ammo_clip': 13, 'ammo_clip_max': 13, 'ammo_reserve': 52, 'state': 'holstered'},
+      'weapon_2': {'name': 'weapon_ak47', 'paintkit': 'hy_ak47lam_blue', 'type': 'Rifle', 'ammo_clip': 30, 'ammo_clip_max': 30, 'ammo_reserve': 90, 'state': 'holstered'},
+      'weapon_3': {'name': 'weapon_hegrenade', 'paintkit': 'default', 'type': 'Grenade', 'ammo_reserve': 1, 'state': 'holstered'},
+      'weapon_4': {'name': 'weapon_flashbang', 'paintkit': 'default', 'type': 'Grenade', 'ammo_reserve': 1, 'state': 'holstered'},
+      'weapon_5': {'name': 'weapon_smokegrenade', 'paintkit': 'default', 'type': 'Grenade', 'ammo_reserve': 1, 'state': 'holstered'},
+      'weapon_6': {'name': 'weapon_molotov', 'paintkit': 'default', 'type': 'Grenade', 'ammo_reserve': 1, 'state': 'holstered'},
+      'weapon_7': {'name': 'weapon_taser', 'paintkit': 'default', 'ammo_clip': 1, 'ammo_clip_max': 1, 'ammo_reserve': 0, 'state': 'holstered'}},
+    'match_stats': {'kills': 5, 'assists': 0, 'deaths': 0, 'mvps': 1, 'score': 14}},
+
+  'added': {'round': {'bomb': True}},
+
+  'auth': {'token': 'MYTOKENHERE'}}

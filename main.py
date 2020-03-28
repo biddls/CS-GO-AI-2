@@ -1,0 +1,49 @@
+import numpy as np
+
+def main(data):
+
+    player = data.get('player')
+    if player.get('observer_slot') == 1:
+        map = data.get('map')
+
+        round = data.get('round')
+
+        try:
+            round.pop('win_team')
+        except:
+            pass
+
+        if len(round) < 2:
+            round = [round.get('phase'), 'not planted']
+
+        else:
+            round = [round.get('phase'), round.get('bomb')]
+
+        map = [map.get('team_ct').get('score'), map.get('team_t').get('score'), round[0], round[1]]
+
+        stats = player.get('match_stats')
+        stats = [stats.get('kills'), stats.get('assists'), stats.get('deaths'), stats.get('mvps'), stats.get('score')]
+
+        state = player.get('state')
+        if state.get('round_killshs') == None:
+            HSs = 0
+        else:
+            HSs = state.get('round_killshs')
+        state = [state.get('health'), state.get('flashed'), state.get('smoked'), state.get('burning'),
+                 state.get('round_kills'), HSs]
+
+        player = [player.get('team')]
+
+        player += state + stats
+
+        data = map + player
+        key = ['ct rounds', 't rounds', 'round phase', 'bomb phase', 'players team', 'health', 'flashed', 'smoked',
+               'burning', 'round kills', 'round kills hs', 'kills', 'assists', 'deaths', 'mvps', 'score']
+
+        prnt = []
+        for x in range(len(key)):
+            prnt.append([key[x], data[x]])
+
+        print(prnt)
+    else:
+        print('Oberserving/ dead')

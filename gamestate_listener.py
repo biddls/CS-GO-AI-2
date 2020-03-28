@@ -3,9 +3,7 @@ import multiprocessing
 import http.server
 import socketserver
 import urllib.request
-from misc.config import *
-from misc.messages import *
-
+from main import main
 
 class PostHandler(http.server.SimpleHTTPRequestHandler):
 
@@ -22,30 +20,13 @@ class PostHandler(http.server.SimpleHTTPRequestHandler):
         self.send_ok_response()
 
     def process_post_data(self, json_string):
-        json_data = json.loads(json_string)
-        print(json_data)
-        added_key = json_data.get("added")
-        if added_key:
-            round_key = added_key.get("round")
-            if round_key:
-                bomb_key = round_key.get("bomb")
-                win_team_key = round_key.get("win_team")
-                if bomb_key:
-                    self.send_bomb_planted_message()
-                elif win_team_key:
-                    self.send_round_over_message()
+        main(json.loads(json_string))
 
-    def send_bomb_planted_message(self):
-        self.server.msg_queue.put(BOMB_PLANTED)
-
-    def send_round_over_message(self):
-        self.server.msg_queue.put(ROUND_OVER)
 
     def send_ok_response(self):
         self.send_response(200)
         self.send_header("Content-type", "text/html")
         self.end_headers()
-
 
 class ListenerServer(socketserver.TCPServer):
 
