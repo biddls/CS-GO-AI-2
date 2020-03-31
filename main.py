@@ -1,4 +1,5 @@
 import numpy as np
+import time
 
 def main(data):
 
@@ -37,6 +38,20 @@ def main(data):
         player += state + stats
 
         data = map + player
+
+
+        path = 'C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\game data\\data.txt'
+        dat = open(path, 'a+')
+        string = str(data[0])
+
+        for x in data[1:]:
+            string += ', ' + str(x)
+
+        dat.write(str(time.time()) + string + '\r')
+
+        dat.close()
+
+
         key = ['ct rounds', 't rounds', 'round phase', 'bomb phase', 'players team', 'health', 'flashed', 'smoked',
                'burning', 'round kills', 'round kills hs', 'kills', 'assists', 'deaths', 'mvps', 'score']
 
