@@ -1,10 +1,12 @@
 import keyboard as kbd
 import pyautogui as pygu
 from time import sleep
+
 pygu.FAILSAFE = False
 
-#width = 1920
-#height = 1080
+
+# width = 1920
+# height = 1080
 
 def cscmd(cmd):
     try:
@@ -25,6 +27,7 @@ def cscmd(cmd):
         except:
             print('input was', cmd)
 
+
 def move(keys):
     release('wasd')
     for x in keys:
@@ -33,6 +36,7 @@ def move(keys):
         except:
             raise Exception('not a valid key, you tired to pass: {}'.format(x))
 
+
 def release(keys):
     for x in keys:
         try:
@@ -40,8 +44,10 @@ def release(keys):
         except:
             raise Exception('not a valid key, you tired to pass: {}'.format(x))
 
+
 def shoot(x, y):
     pygu.dragRel(x, y)
+
 
 def moveMouse(x, y):
     pygu.moveRel(x, y)

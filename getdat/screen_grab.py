@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import win32gui, win32ui, win32con, win32api
 
+
 ##returns an image of screen each time called
 def grab_screen(region=None):
     hwin = win32gui.GetDesktopWindow()
@@ -35,6 +36,7 @@ def grab_screen(region=None):
 
     return cv2.cvtColor(img, cv2.COLOR_BGRA2RGB)
 
+
 if __name__ == '__main__':
 
     from datetime import datetime
@@ -42,9 +44,8 @@ if __name__ == '__main__':
 
     see = input('wanna see the screen? (y)').lower()
 
-
     if see == 'y':
-        screen = grab_screen(region=(0, 40,800, 640))
+        screen = grab_screen(region=(0, 40, 800, 640))
         plt.imshow(screen)
         plt.show()
 
@@ -53,9 +54,9 @@ if __name__ == '__main__':
         n = 100
 
         for x in range(n):
-            screen = grab_screen(region=(0, 40,800, 640))
+            screen = grab_screen(region=(0, 40, 800, 640))
 
     f = datetime.now()
 
     if see != 'y':
-        print(round(100 / (f - s).total_seconds()),'FPS')
+        print(round(100 / (f - s).total_seconds()), 'FPS')

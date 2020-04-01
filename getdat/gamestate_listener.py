@@ -3,7 +3,8 @@ import multiprocessing
 import http.server
 import socketserver
 import urllib.request
-from main import main
+from getdat.cleanGSI import main
+
 
 class PostHandler(http.server.SimpleHTTPRequestHandler):
 
@@ -22,11 +23,11 @@ class PostHandler(http.server.SimpleHTTPRequestHandler):
     def process_post_data(self, json_string):
         main(json.loads(json_string))
 
-
     def send_ok_response(self):
         self.send_response(200)
         self.send_header("Content-type", "text/html")
         self.end_headers()
+
 
 class ListenerServer(socketserver.TCPServer):
 

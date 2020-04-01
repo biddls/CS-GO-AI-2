@@ -6,6 +6,7 @@ keyList = ["\b"]
 for char in "ABCDEFGHIJKLMNOPQRSTUVWXYZ 123456789,.'£$/\\":
     keyList.append(char)
 
+
 def key_check():
     keys = []
     for key in keyList:

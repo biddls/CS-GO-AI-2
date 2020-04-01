@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7489195-bd07-4aac-8de4-0305db352674" name="Default Changelist" comment="stuff">
-      <change afterPath="$PROJECT_DIR$/ctrls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="d7489195-bd07-4aac-8de4-0305db352674" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/getdat/cleanGSI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go_timer.py" beforeDir="false" afterPath="$PROJECT_DIR$/get GSI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrls.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdat/ctrls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamestate_listener.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdat/gamestate_listener.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get GSI.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdat/getalldat.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/output.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screen_grab.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdat/screen_grab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/useless/dataIn.py" beforeDir="false" afterPath="$PROJECT_DIR$/useless/dataIn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/useless/display live feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/useless/display live feed.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/useless/getdat.py" beforeDir="false" afterPath="$PROJECT_DIR$/useless/getdat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/useless/getkeys.py" beforeDir="false" afterPath="$PROJECT_DIR$/useless/getkeys.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/useless/imagetotrain.py" beforeDir="false" afterPath="$PROJECT_DIR$/useless/imagetotrain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/useless/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/useless/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,15 +45,37 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\thoma\Downloads\GoTimer-master" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\getdat" />
       <recent name="C:\Users\thoma\Downloads\GoTimer-master\unless" />
       <recent name="C:\Users\thoma\Downloads\GoTimer-master" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\thoma\Downloads\GoTimer-master" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.get GSI">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="cleanGSI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CS GO AI 2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\getdat\cleanGSI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="ctrls" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CS GO AI 2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -57,7 +88,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\ctrls.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\getdat\ctrls.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -66,7 +97,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="display live feed" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="getalldat (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CS GO AI 2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/getdat" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/getdat/getalldat.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="getalldat" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CS GO AI 2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -78,49 +130,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\thoma\Downloads\GoTimer-master\unless\display live feed.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="get GSI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="CS GO AI 2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/get GSI.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go_timer" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="CS GO AI 2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\get GSI.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\getdat\getalldat.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -152,11 +162,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.get GSI" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.getalldat (1)" />
+        <item itemvalue="Python.getalldat" />
+        <item itemvalue="Python.cleanGSI" />
         <item itemvalue="Python.ctrls" />
-        <item itemvalue="Python.go_timer" />
-        <item itemvalue="Python.display live feed" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585434179836</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="stuff">
+      <created>1585694079386</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1585694079386</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -224,22 +241,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="210" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585692887823" />
-    <state width="913" height="282" key="GridCell.Tab.0.bottom" timestamp="1585694058985">
+    <state x="114" y="117" key="CommitChangelistDialog2" timestamp="1585694078826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585694058985" />
-    <state width="913" height="282" key="GridCell.Tab.0.center" timestamp="1585694058985">
+    <state x="114" y="117" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585694078826" />
+    <state width="913" height="282" key="GridCell.Tab.0.bottom" timestamp="1585696027268">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585694058985" />
-    <state width="913" height="282" key="GridCell.Tab.0.left" timestamp="1585694058985">
+    <state width="913" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585696027268" />
+    <state width="913" height="282" key="GridCell.Tab.0.center" timestamp="1585696027268">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585694058985" />
-    <state width="913" height="282" key="GridCell.Tab.0.right" timestamp="1585694058985">
+    <state width="913" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585696027267" />
+    <state width="913" height="282" key="GridCell.Tab.0.left" timestamp="1585696027267">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585694058985" />
+    <state width="913" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585696027267" />
+    <state width="913" height="282" key="GridCell.Tab.0.right" timestamp="1585696027268">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="913" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585696027268" />
     <state x="0" y="165" key="SettingsEditor" timestamp="1585691095336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
