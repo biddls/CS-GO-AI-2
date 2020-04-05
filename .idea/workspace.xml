@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7489195-bd07-4aac-8de4-0305db352674" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/getdat/cleanGSI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ctrls.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdat/ctrls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamestate_listener.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdat/gamestate_listener.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get GSI.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdat/getalldat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getdat/cleanGSI.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdat/cleanGSI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/output.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screen_grab.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdat/screen_grab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/useless/dataIn.py" beforeDir="false" afterPath="$PROJECT_DIR$/useless/dataIn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/useless/display live feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/useless/display live feed.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/useless/getdat.py" beforeDir="false" afterPath="$PROJECT_DIR$/useless/getdat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/useless/getkeys.py" beforeDir="false" afterPath="$PROJECT_DIR$/useless/getkeys.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/useless/imagetotrain.py" beforeDir="false" afterPath="$PROJECT_DIR$/useless/imagetotrain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/useless/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/useless/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +21,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/biddls/CS-GO-AI-2.git" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1ZlPs9tuzmwFCLr0sGUnZ4cYKNX" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -42,7 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -216,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585694079386</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="stuff">
+      <created>1585743100059</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1585743100059</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,26 +248,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="114" y="117" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585743099314" />
-    <state width="913" height="282" key="GridCell.Tab.0.bottom" timestamp="1585696027268">
+    <state width="1876" height="282" key="GridCell.Tab.0.bottom" timestamp="1585928886766">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585696027268" />
-    <state width="913" height="282" key="GridCell.Tab.0.center" timestamp="1585696027268">
+    <state width="1876" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585928886766" />
+    <state width="1876" height="282" key="GridCell.Tab.0.center" timestamp="1585928886766">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585696027267" />
-    <state width="913" height="282" key="GridCell.Tab.0.left" timestamp="1585696027267">
+    <state width="1876" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585928886766" />
+    <state width="1876" height="282" key="GridCell.Tab.0.left" timestamp="1585928886766">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585696027267" />
-    <state width="913" height="282" key="GridCell.Tab.0.right" timestamp="1585696027268">
+    <state width="1876" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585928886766" />
+    <state width="1876" height="282" key="GridCell.Tab.0.right" timestamp="1585928886766">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="913" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585696027268" />
-    <state x="0" y="165" key="SettingsEditor" timestamp="1585691095336">
+    <state width="1876" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585928886766" />
+    <state x="0" y="165" key="SettingsEditor" timestamp="1585747023444">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585691095336" />
+    <state x="0" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585747023444" />
     <state x="176" y="255" width="607" height="536" key="find.popup" timestamp="1585693176788">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
