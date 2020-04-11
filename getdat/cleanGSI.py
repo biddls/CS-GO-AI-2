@@ -1,5 +1,5 @@
 import time
-
+import traceback
 
 def clean(data):
     player = data.get('player')
@@ -32,29 +32,41 @@ def clean(data):
     player = [player.get('team')]
 
     player += state + stats
-
     data = map + player
+
+    get = ['kills', 'deaths']
+
+    both = dict(zip(key,data))
+    use = []
+    for item in get:
+        use.append(both[item])
+
     path = 'C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\game data\\data.txt'
-    dat = open(path, 'a+')
-    string = str(data[0])
 
-    for x in data:
-        string += ', ' + str(x)
-
-    dat.write(str(time.time()) + string + '\r')
-
+    comp = None
+    dat = open(path, 'r')
+    comp2 = dat.read().split('\n')
+    comp2.pop()
+    for x in comp2:
+        comp = x
     dat.close()
 
-    key = ['ct rounds', 't rounds', 'round phase', 'bomb phase', 'players team', 'health', 'flashed', 'smoked',
-           'burning', 'round kills', 'round kills hs', 'kills', 'assists', 'deaths', 'mvps',
-           'score']  # and time idk why i have that may remove
+    comp2 = ", ".join(str(x) for x in use)
+
+    if comp != comp2:
+        dat = open(path, 'a+')
+        dat.write(comp2 + '\r')
+        dat.close()
 
     prnt = []
     for x in range(len(key)):
         prnt.append([key[x], data[x]])
 
-    # print(prnt)
+    #print(prnt)
 
+key = ['ct rounds', 't rounds', 'round phase', 'bomb phase', 'players team', 'health', 'flashed', 'smoked',
+           'burning', 'round kills', 'round kills hs', 'kills', 'assists', 'deaths', 'mvps',
+           'score']
 
 def main(data):
     try:
@@ -70,6 +82,7 @@ def main(data):
             dat.write('DIED\r')
 
             dat.close()
-    except:
+    except Exception:
+        traceback.print_exc()
         open('C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\game data\\data.txt',
              "w+").close()
