@@ -82,7 +82,6 @@ def main(data):
             dat.write('DIED\r')
 
             dat.close()
-    except Exception:
-        traceback.print_exc()
+    except:
         open('C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\game data\\data.txt',
              "w+").close()
