@@ -1,5 +1,5 @@
 import NN
-import traceback
+import matplotlib as mpl
 import threading
 import random
 import time
@@ -7,9 +7,7 @@ from time import sleep
 from getdat import getalldat
 from getdat import ctrls
 import numpy as np
-import pyautogui as pygu
 from getdat import screen_grab
-import cv2
 import keyboard as kbd
 
 
@@ -129,13 +127,14 @@ def setup():
 
     a = np.zeros(24)
     rwd = ['a']
-    passed = False
+    passed = True
     observations = None
     started = False
+    losses = []
 
     restart()
 
-    while True:
+    for x in range(100):
         observation = screen_grab.grab_screen()
 
         if observation.shape == (1200, 1600, 3):
@@ -162,7 +161,7 @@ def setup():
 
                     rwd = discount_rewards(rwd, hyperparams['discount factor'])
 
-                    model = NN.train(model, rwd, didl, nnoutl)
+                    model, losses = NN.train(model, rwd, didl, nnoutl, losses)
 
                     rwd = ['a']
                     didl = ['a']
@@ -182,10 +181,10 @@ def setup():
                     didl.append(did)
                     nnoutl.append(nnout)
 
-            if len(rwd)%2 == 0:
+            if len(rwd)%400 == 0:
                 passed = True
 
-            #print('fps:', 1 / (time.time() - s))
+    mpl.pyplot.plot(losses)
 
 
 if __name__ == '__main__':
