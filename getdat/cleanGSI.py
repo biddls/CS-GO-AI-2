@@ -41,7 +41,7 @@ def clean(data):
     for item in get:
         use.append(both[item])
 
-    path = 'C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\game data\\data.txt'
+    path = 'C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\data.txt'
 
     comp = None
     dat = open(path, 'r')
@@ -75,7 +75,7 @@ def main(data):
             clean(data)
 
         else:
-            path = 'C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\game data\\data.txt'
+            path = 'C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\data.txt'
             dat = open(path, 'a+')
 
             clean(data)
@@ -83,5 +83,5 @@ def main(data):
 
             dat.close()
     except:
-        open('C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\game data\\data.txt',
+        open('C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\data.txt',
              "w+").close()

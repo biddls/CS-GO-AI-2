@@ -30,9 +30,18 @@ def cscmd(cmd):
 
 def move(keys):
     release('wasd')
+    if keys != 'none':
+        for x in keys:
+            try:
+                kbd.press(x)
+            except:
+                raise Exception('not a valid key, you tired to pass: {}'.format(x))
+
+def tap(keys):
     for x in keys:
         try:
             kbd.press(x)
+            kbd.release(x)
         except:
             raise Exception('not a valid key, you tired to pass: {}'.format(x))
 
