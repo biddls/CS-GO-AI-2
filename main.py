@@ -143,10 +143,13 @@ def setup():
             sendinputs(did, observation.shape)#send inputs to cs go
 
             if get_data.new == True:#if theres a new record from the GSI
+                get_data.new = False #let it knows its processed the reward
+
                 if type(rwd[0]) == str: #initlaises tracking vars
                     rwd = [get_data.reward]
                     didl = [did]
                     nnoutl = [nnout]
+
                 else:
                     rwd.append(get_data.reward)
                     didl.append(did)
@@ -159,7 +162,6 @@ def setup():
                     passed = False
 
                     rwd = discount_rewards(rwd, hyperparams['discount factor'])#back prpergates rewards w decay
-
                     model, losses = NN.train(model, rwd, didl, nnoutl, losses)#trains NN 1 step for each observation
 
                     #resets vars
@@ -168,8 +170,6 @@ def setup():
                     nnoutl = ['a']
 
                     restart()#restarts cs match
-
-                get_data.new = False #let it knows its processed the reward
 
             else:#same as earlier but the reward is 0 as it needs to be back filled
                 if type(rwd[0]) == str:
