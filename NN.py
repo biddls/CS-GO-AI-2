@@ -39,6 +39,7 @@ def losscalc(x, y, z):
 
 
 def train(model, reward, did, nnout, losses):
+    print(reward)
     optimizer = tf.keras.optimizers.RMSprop(learning_rate = 0.001, decay = 0.99)
     for x, y, z in zip(reward, did, nnout):
         loss_val, grads = grad(model, x, y, z)

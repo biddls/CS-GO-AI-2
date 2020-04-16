@@ -1,5 +1,5 @@
 import NN
-import matplotlib as mpl
+import matplotlib.pyplot as plt
 import threading
 import random
 import time
@@ -11,8 +11,7 @@ from getdat import screen_grab
 import keyboard as kbd
 
 
-
-class myThread(threading.Thread):
+class myThread(threading.Thread):#GSI listener and parser
     def __init__(self, threadID, name, ):
         threading.Thread.__init__(self)
         self.threadID = threadID
@@ -25,6 +24,7 @@ class myThread(threading.Thread):
     def run(self):
         print("Starting " + self.name)
         while True:
+            #parsing in file
             file = open(self.path)
             data = file.read().split('\n')
 
@@ -37,13 +37,14 @@ class myThread(threading.Thread):
                         pass
 
             data = np.array(data)[:-1]
+            #if there is data
             if len(data) > 0:
                 difference = []
                 if len(data) > 1:
 
                     new = data[-1]
                     old = data[-2]
-
+                    #if there is a change
                     if new != self.old:
                         zip_object = zip(new, old)
                         for list1_i, list2_i in zip_object:
@@ -51,21 +52,21 @@ class myThread(threading.Thread):
 
                     self.old = new
 
+                #if theres 1 thing in list then thats the new difrence
                 elif len(data) == 1:
                     if max(data[0]) == 1:
                         difference = data[0]
-
+                #calulates reward
                 if len(difference) != 0 and sum(difference) < 2:
                     self.reward = difference[0] - difference[1]
                     self.reward = - (self.reward / abs(self.reward))
                     self.new = True
 
-def softmax(x):
+def softmax(x):#softmax funciton
     e_x = np.exp(x - np.max(x))
     return e_x / e_x.sum()
 
-def action(probs):
-
+def action(probs):#chooses what action to make
     r = random.random()
     index = 0
     while (r >= 0 and index < len(probs)):
@@ -77,7 +78,7 @@ def action(probs):
     probs[index] = 1
     return probs
 
-def sendinputs(do, shape):
+def sendinputs(do, shape):#send inputs to cs
     if shape == (1200, 1600, 3):
         width = shape[1]
         height = shape[0]
@@ -90,7 +91,7 @@ def sendinputs(do, shape):
         else:
             ctrls.moveMouse(width * (shoot[0]-0.5), height * (shoot[1]-0.5))
 
-def discount_rewards(r, gamma):
+def discount_rewards(r, gamma):#backpropergates rewards w discount factor
     pointer = 0
     length = 0
     for x in range(len(r)-1, 0, -1):
@@ -102,7 +103,7 @@ def discount_rewards(r, gamma):
 
     return r
 
-def restart():
+def restart():#resrtats the round
     if screen_grab.grab_screen().shape == (1200, 1600, 3):
         ctrls.cscmd('mp_restartgame 1')
         sleep(0.1)
@@ -114,37 +115,35 @@ def restart():
 #outputs = ['a', 'w', 's', 'd', 'aw', 'wd', 'as', 'ad', 'none', '+ or - size for x and y']
 outputs = ['a', 'w', 's', 'd', 'aw', 'wd', 'as', 'ad', 'none']#, '+ or - size for x and y']
 
-hyperparams = {'discount factor': 0.98}
+hyperparams = {'discount factor': 0.98}#dicount factor
 
 def setup():
-    open('C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\data.txt', "w+").close()
-    getalldat.GSIstart()
-    get_data = myThread(1, 'data boi time')
+    open('C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\data.txt', "w+").close()#resets text file
+    getalldat.GSIstart()#stats GSI server
+    get_data = myThread(1, 'data boi time')#stats the code to perpertualy look for newly updated txt file
 
     # Start new Threads
     get_data.start()
     model = NN.modelmake()
 
-    a = np.zeros(24)
-    rwd = ['a']
-    passed = True
-    observations = None
-    started = False
-    losses = []
+    rwd = ['a']#reward list
+    passed = True #past threshold to begin waiting for a kill or death
+    losses = []#records losses
 
-    restart()
+    if screen_grab.grab_screen().shape == (1200, 1600, 3):#if in game
+        restart()#restartes cs go game
 
-    for x in range(100):
-        observation = screen_grab.grab_screen()
+    for x in range(1000000000):#100 loops though
+        s = time.time()#used to measure FPS
+        observation = screen_grab.grab_screen()#grabs new screen data
 
-        if observation.shape == (1200, 1600, 3):
-            s = time.time()
-            nnout = model.predict(observation.reshape([-1, 1600, 1200, 3]))[0]
-            did = np.append(action(softmax(np.array(nnout[:-3]))), nnout[-3:])
-            sendinputs(did, observation.shape)
+        if observation.shape == (1200, 1600, 3):#if its of the game
+            nnout = model.predict(observation.reshape([-1, 1600, 1200, 3]))[0]#gets NN ouput
+            did = np.append(action(softmax(np.array(nnout[:-3]))), nnout[-3:])#puts part of it though a soft max
+            sendinputs(did, observation.shape)#send inputs to cs go
 
-            if get_data.new == True:
-                if type(rwd[0]) == str:
+            if get_data.new == True:#if theres a new record from the GSI
+                if type(rwd[0]) == str: #initlaises tracking vars
                     rwd = [get_data.reward]
                     didl = [did]
                     nnoutl = [nnout]
@@ -153,25 +152,26 @@ def setup():
                     didl.append(did)
                     nnoutl.append(nnout)
 
-                if get_data.reward == -1:
+                if get_data.reward == -1:#if died
                     ctrls.tap('x')
 
-                if passed == True:
+                if passed == True: #if the number of itterations has passed a batch size
                     passed = False
 
-                    rwd = discount_rewards(rwd, hyperparams['discount factor'])
+                    rwd = discount_rewards(rwd, hyperparams['discount factor'])#back prpergates rewards w decay
 
-                    model, losses = NN.train(model, rwd, didl, nnoutl, losses)
+                    model, losses = NN.train(model, rwd, didl, nnoutl, losses)#trains NN 1 step for each observation
 
+                    #resets vars
                     rwd = ['a']
                     didl = ['a']
                     nnoutl = ['a']
 
-                    restart()
+                    restart()#restarts cs match
 
-                get_data.new = False
+                get_data.new = False #let it knows its processed the reward
 
-            else:
+            else:#same as earlier but the reward is 0 as it needs to be back filled
                 if type(rwd[0]) == str:
                     rwd = [0]
                     didl = [did]
@@ -181,10 +181,11 @@ def setup():
                     didl.append(did)
                     nnoutl.append(nnout)
 
-            if len(rwd)%400 == 0:
+            if len(rwd)%400 == 0:#trigger for batch size
                 passed = True
 
-    mpl.pyplot.plot(losses)
+            #print('fps:', 1/(time.time()-s))#prints fps
+
 
 
 if __name__ == '__main__':
