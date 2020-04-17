@@ -2,7 +2,6 @@ import tensorflow as tf
 from tensorflow.keras import layers, models
 import numpy as np
 
-
 def modelmake():
     model = models.Sequential()
     model.add(layers.Conv2D(200,  (7, 7), strides= 1,   activation='relu', input_shape=(1600, 1200, 3)))
@@ -31,17 +30,11 @@ def modelmake():
 
 
 def trainRL(model, reward, did, nnout):
-
-    losses = []
     optimizer = tf.keras.optimizers.RMSprop(learning_rate = 0.01, decay = 0.99)
     for x, y, z in zip(reward, did, nnout):
-        loss = tf.reduce_sum(x * tf.losses.categorical_crossentropy(y, z))
+        loss = lambda: tf.reduce_sum(x * tf.losses.categorical_crossentropy(y, z))
         grads = optimizer._compute_gradients(loss, model.trainable_variables)
         optimizer.apply_gradients(zip(grads, model.trainable_variables))
-
-        losses.append(float(loss))
-
-    return model, losses
 
 reward = np.array(np.load('reward.npy'))
 did = np.load('did.npy')
