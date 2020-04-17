@@ -32,10 +32,6 @@ def modelmake():
 
 def trainRL(model, reward, did, nnout):
 
-    np.save('reward.npy', reward)
-    np.save('did.npy', did)
-    np.save('nnout.npy', nnout)
-
     losses = []
     optimizer = tf.keras.optimizers.RMSprop(learning_rate = 0.01, decay = 0.99)
     for x, y, z in zip(reward, did, nnout):
@@ -47,9 +43,9 @@ def trainRL(model, reward, did, nnout):
 
     return model, losses
 
-#reward = np.array(np.load('reward.npy'))
-#did = np.load('did.npy')
-#nnout = np.load('nnout.npy')
+reward = np.array(np.load('reward.npy'))
+did = np.load('did.npy')
+nnout = np.load('nnout.npy')
 
-#model = modelmake()
-#trainRL(model, reward, did, nnout)
+model = modelmake()
+trainRL(model, reward, did, nnout)
