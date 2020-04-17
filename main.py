@@ -133,13 +133,13 @@ def setup():
     if screen_grab.grab_screen().shape == (1200, 1600, 3):#if in game
         restart()#restartes cs go game
 
-    for x in range(1000):#100 loops though
+    for x in range(2000):#100 loops though
         observation = screen_grab.grab_screen()#grabs new screen data
 
         if observation.shape == (1200, 1600, 3):#if its of the game
             nnout = model.predict(observation.reshape([-1, 1600, 1200, 3]))[0]#gets NN ouput
             did = np.append(action(softmax(np.array(nnout[:-3]))), nnout[-3:])#puts part of it though a soft max
-            sendinputs(did, observation.shape)#send inputs to cs go
+            #sendinputs(did, observation.shape)#send inputs to cs go
 
             if get_data.new == True:#if theres a new record from the GSI
                 get_data.new = False #let it knows its processed the reward
@@ -160,10 +160,9 @@ def setup():
                 if passed == True: #if the number of itterations has passed a batch size
                     passed = False
                     if rwd != [1.0]:
-                        print(rwd)
                         ctrls.move('none')
                         rwd = discount_rewards(rwd, hyperparams['discount factor'])#back prpergates rewards w decay
-                        model, losses = NN.train(model, rwd, didl, nnoutl)#trains NN 1 step for each observation
+                        model, losses = NN.trainRL(model, rwd, didl, nnoutl)#trains NN 1 step for each observation
 
                         runs.append(mean(losses))
 
@@ -187,9 +186,8 @@ def setup():
                     didl.append(did)
                     nnoutl.append(nnout)
 
-            if len(rwd)%400 == 0:#trigger for batch size
+            if len(rwd)%4 == 0:#trigger for batch size
                 passed = True
-            print(x)
             #print('fps:', 1/(time.time()-s))#prints fps
 
 
