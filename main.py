@@ -9,6 +9,7 @@ from getdat import ctrls
 import numpy as np
 from getdat import screen_grab
 import keyboard as kbd
+from statistics import mean
 
 
 class myThread(threading.Thread):#GSI listener and parser
@@ -59,7 +60,7 @@ class myThread(threading.Thread):#GSI listener and parser
                 #calulates reward
                 if len(difference) != 0 and sum(difference) < 2:
                     self.reward = difference[0] - difference[1]
-                    self.reward = - (self.reward / abs(self.reward))
+                    self.reward = (self.reward / abs(self.reward))
                     self.new = True
 
 def softmax(x):#softmax funciton
@@ -105,10 +106,8 @@ def discount_rewards(r, gamma):#backpropergates rewards w discount factor
 
 def restart():#resrtats the round
     if screen_grab.grab_screen().shape == (1200, 1600, 3):
-        ctrls.cscmd('mp_restartgame 1')
-        sleep(0.1)
-        kbd.press('esc')
-        sleep(1.9)
+        kbd.press('h')
+        sleep(1.5)
         ctrls.tap('x')
 
 #key = ['time', 'ct rounds', 't rounds', 'round phase', 'bomb phase', 'players team', 'health', 'flashed', 'smoked', 'burning', 'round kills', 'round kills hs', 'kills', 'assists', 'deaths', 'mvps', 'score']
@@ -128,13 +127,13 @@ def setup():
 
     rwd = ['a']#reward list
     passed = True #past threshold to begin waiting for a kill or death
-    losses = []#records losses
+
+    runs = []
 
     if screen_grab.grab_screen().shape == (1200, 1600, 3):#if in game
         restart()#restartes cs go game
 
-    for x in range(1000000000):#100 loops though
-        s = time.time()#used to measure FPS
+    for x in range(1000):#100 loops though
         observation = screen_grab.grab_screen()#grabs new screen data
 
         if observation.shape == (1200, 1600, 3):#if its of the game
@@ -155,21 +154,28 @@ def setup():
                     didl.append(did)
                     nnoutl.append(nnout)
 
-                if get_data.reward == -1:#if died
+                if get_data.reward == -1:
                     ctrls.tap('x')
 
                 if passed == True: #if the number of itterations has passed a batch size
                     passed = False
+                    if rwd != [1.0]:
+                        print(rwd)
+                        ctrls.move('none')
+                        rwd = discount_rewards(rwd, hyperparams['discount factor'])#back prpergates rewards w decay
+                        model, losses = NN.train(model, rwd, didl, nnoutl)#trains NN 1 step for each observation
 
-                    rwd = discount_rewards(rwd, hyperparams['discount factor'])#back prpergates rewards w decay
-                    model, losses = NN.train(model, rwd, didl, nnoutl, losses)#trains NN 1 step for each observation
+                        runs.append(mean(losses))
 
-                    #resets vars
-                    rwd = ['a']
-                    didl = ['a']
-                    nnoutl = ['a']
+                        #resets vars
+                        rwd = ['a']
+                        didl = ['a']
+                        nnoutl = ['a']
 
-                    restart()#restarts cs match
+                        ctrls.tap('h')
+                        sleep(3)
+                        ctrls.tap('x')
+
 
             else:#same as earlier but the reward is 0 as it needs to be back filled
                 if type(rwd[0]) == str:
@@ -183,8 +189,12 @@ def setup():
 
             if len(rwd)%400 == 0:#trigger for batch size
                 passed = True
-
+            print(x)
             #print('fps:', 1/(time.time()-s))#prints fps
+
+
+    plt.plot(runs)
+    plt.show()
 
 
 

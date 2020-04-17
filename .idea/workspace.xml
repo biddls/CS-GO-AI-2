@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7489195-bd07-4aac-8de4-0305db352674" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/CS GO AI 2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CS GO AI 2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NN.py" beforeDir="false" afterPath="$PROJECT_DIR$/NN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getdat/cleanGSI.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdat/cleanGSI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -222,6 +219,7 @@
       <workItem from="1586953436519" duration="9021000" />
       <workItem from="1586980810549" duration="8423000" />
       <workItem from="1587065706659" duration="8259000" />
+      <workItem from="1587074180377" duration="8429000" />
     </task>
     <task id="LOCAL-00001" summary="stuff">
       <created>1585433696218</created>
@@ -307,7 +305,21 @@
       <option name="project" value="LOCAL" />
       <updated>1587071736955</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="got all data working need to add NN now">
+      <created>1587074199203</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1587074199203</updated>
+    </task>
+    <task id="LOCAL-00014" summary="got all data working need to add NN now">
+      <created>1587074337931</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1587074337931</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,34 +356,35 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="199" y="149" key="#main/0.0.1920.1040@0.0.1920.1040" timestamp="1586478751719" />
-    <state x="114" y="117" key="CommitChangelistDialog2" timestamp="1587071736547">
+    <state x="114" y="117" key="CommitChangelistDialog2" timestamp="1587074337453">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="114" y="117" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587071736547" />
+    <state x="114" y="117" key="CommitChangelistDialog2/0.0.1600.1160@0.0.1600.1160" timestamp="1587074198513" />
+    <state x="114" y="117" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587074337453" />
     <state x="260" y="278" key="FileChooserDialogImpl" timestamp="1586829380612">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="260" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586829380612" />
-    <state width="1877" height="268" key="GridCell.Tab.0.bottom" timestamp="1587073994481">
+    <state width="1877" height="268" key="GridCell.Tab.0.bottom" timestamp="1587082890768">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="914" height="341" key="GridCell.Tab.0.bottom/0.0.1600.1160@0.0.1600.1160" timestamp="1586983182420" />
-    <state width="1877" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587073994481" />
-    <state width="1877" height="268" key="GridCell.Tab.0.center" timestamp="1587073994481">
+    <state width="1877" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587082890768" />
+    <state width="1877" height="268" key="GridCell.Tab.0.center" timestamp="1587082890768">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="914" height="341" key="GridCell.Tab.0.center/0.0.1600.1160@0.0.1600.1160" timestamp="1586983182419" />
-    <state width="1877" height="268" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587073994481" />
-    <state width="1877" height="268" key="GridCell.Tab.0.left" timestamp="1587073994481">
+    <state width="1877" height="268" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587082890768" />
+    <state width="1877" height="268" key="GridCell.Tab.0.left" timestamp="1587082890768">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="914" height="341" key="GridCell.Tab.0.left/0.0.1600.1160@0.0.1600.1160" timestamp="1586983182419" />
-    <state width="1877" height="268" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587073994481" />
-    <state width="1877" height="268" key="GridCell.Tab.0.right" timestamp="1587073994481">
+    <state width="1877" height="268" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587082890768" />
+    <state width="1877" height="268" key="GridCell.Tab.0.right" timestamp="1587082890768">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="914" height="341" key="GridCell.Tab.0.right/0.0.1600.1160@0.0.1600.1160" timestamp="1586983182420" />
-    <state width="1877" height="268" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587073994481" />
+    <state width="1877" height="268" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587082890768" />
     <state width="916" height="341" key="GridCell.Tab.1.bottom" timestamp="1587069713148">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -396,10 +409,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="332" y="92" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587073558309" />
-    <state x="112" y="90" width="929" height="760" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1587074022351">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="112" y="90" width="929" height="760" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1587078731202">
+      <screen x="0" y="0" width="1600" height="1160" />
     </state>
-    <state x="112" y="90" width="929" height="760" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1600.1160@0.0.1600.1160" timestamp="1587067776392" />
+    <state x="112" y="90" width="929" height="760" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1600.1160@0.0.1600.1160" timestamp="1587078731202" />
     <state x="112" y="90" width="929" height="760" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587074022351" />
     <state x="34" y="248" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1587069711999">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -426,7 +439,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CS_GO_AI_2$main.coverage" NAME="main Coverage Results" MODIFIED="1587073930513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$main.coverage" NAME="main Coverage Results" MODIFIED="1587082444729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$NN.coverage" NAME="NN Coverage Results" MODIFIED="1587068624886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

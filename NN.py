@@ -38,14 +38,14 @@ def losscalc(x, y, z):
     return tf.reduce_sum(x * tf.losses.categorical_crossentropy(y, z))
 
 
-def train(model, reward, did, nnout, losses):
-    print(reward)
+def train(model, reward, did, nnout):
+    losses = []
     optimizer = tf.keras.optimizers.RMSprop(learning_rate = 0.001, decay = 0.99)
     for x, y, z in zip(reward, did, nnout):
         loss_val, grads = grad(model, x, y, z)
         grads = [grad if grad is not None else tf.zeros_like(var)
                  for var, grad in zip(model.trainable_variables, grads)]
         optimizer.apply_gradients(zip(grads, model.trainable_variables))
-        losses.append(loss_val)
+        losses.append(float(loss_val))
 
     return model, losses
