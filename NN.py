@@ -28,17 +28,23 @@ def modelmake():
 
     return model
 
+def trainRL(model, reward_, did_, nnout_):
+    optimizer = tf.keras.optimizers.RMSprop(learning_rate=0.01, decay=0.99)
 
-def trainRL(model, reward, did, nnout):
-    optimizer = tf.keras.optimizers.RMSprop(learning_rate = 0.01, decay = 0.99)
-    for x, y, z in zip(reward, did, nnout):
-        loss = lambda: tf.reduce_sum(x * tf.losses.categorical_crossentropy(y, z))
-        grads = optimizer._compute_gradients(loss, model.trainable_variables)
-        optimizer.apply_gradients(zip(grads, model.trainable_variables))
+    for reward, did, nnout in zip(reward_, did_, nnout_):
+        with tf.GradientTape() as t:
+            catCross = tf.losses.categorical_crossentropy(tf.convert_to_tensor(did, dtype=tf.float32),
+                                                          tf.convert_to_tensor(nnout, dtype=tf.float32))
+            lossComp = tf.math.multiply(reward, catCross)
 
-reward = np.array(np.load('reward.npy'))
+        gradients = t.gradient(lossComp, model.trainable_variables)
+        print(len(gradients))
+        optimizer.apply_gradients(zip(gradients, model.trainable_variables))
+
+
+"""reward = np.array(np.load('reward.npy'))
 did = np.load('did.npy')
 nnout = np.load('nnout.npy')
-
+print(len(did[0]))
 model = modelmake()
-trainRL(model, reward, did, nnout)
+trainRL(model, reward, did, nnout)"""

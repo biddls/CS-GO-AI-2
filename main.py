@@ -104,7 +104,8 @@ def discount_rewards(r, gamma):#backpropergates rewards w discount factor
 
     return r
 
-def restart():#resrtats the round
+def restart():#restarts the round
+    #exec RL1
     if screen_grab.grab_screen().shape == (1200, 1600, 3):
         kbd.press('h')
         sleep(1.5)
@@ -118,8 +119,8 @@ hyperparams = {'discount factor': 0.98}#dicount factor
 
 def setup():
     open('C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\data.txt', "w+").close()#resets text file
-    getalldat.GSIstart()#stats GSI server
-    get_data = myThread(1, 'data boi time')#stats the code to perpertualy look for newly updated txt file
+    getalldat.GSIstart()#starts GSI server
+    get_data = myThread(1, 'data boi time')#starts the code to perpertualy look for newly updated txt file
 
     # Start new Threads
     get_data.start()
@@ -150,7 +151,7 @@ def setup():
                     nnoutl = [nnout]
 
                 else:
-                    rwd.append(get_data.reward)
+                    rwdl.append(get_data.reward)
                     didl.append(did)
                     nnoutl.append(nnout)
 
@@ -162,7 +163,7 @@ def setup():
                     if rwd != [1.0]:
                         ctrls.move('none')
                         rwd = discount_rewards(rwd, hyperparams['discount factor'])#back prpergates rewards w decay
-                        model, losses = NN.trainRL(model, rwd, didl, nnoutl)#trains NN 1 step for each observation
+                        model, losses = NN.trainRL(model, rwdl, didl, nnoutl)#trains NN 1 step for each observation
 
                         runs.append(mean(losses))
 
@@ -170,6 +171,7 @@ def setup():
                         rwd = ['a']
                         didl = ['a']
                         nnoutl = ['a']
+                        images = ['a']
 
                         ctrls.tap('h')
                         sleep(3)
@@ -181,13 +183,15 @@ def setup():
                     rwd = [0]
                     didl = [did]
                     nnoutl = [nnout]
+                    images = [observation]
                 else:
-                    rwd.append(0)
+                    rwdl.append(0)
                     didl.append(did)
                     nnoutl.append(nnout)
+                    images.append(observation)
 
             if len(rwd)%4 == 0:#trigger for batch size
-                passed = True
+                pass
             #print('fps:', 1/(time.time()-s))#prints fps
 
 
