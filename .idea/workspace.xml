@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7489195-bd07-4aac-8de4-0305db352674" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/CS GO AI 2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CS GO AI 2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LDSV.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NN.py" beforeDir="false" afterPath="$PROJECT_DIR$/NN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -30,12 +30,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="package.json" />
         <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="hiddenUrls">
@@ -62,7 +66,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -76,6 +80,28 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
+    <configuration name="LDSV" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CS GO AI 2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LDSV.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="NN" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CS GO AI 2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -90,28 +116,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NN.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="cleanGSI (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="CS GO AI 2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/getdat" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/getdat/cleanGSI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -164,7 +168,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mem3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CS GO AI 2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -177,9 +181,9 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mem3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -189,10 +193,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.NN" />
+        <item itemvalue="Python.LDSV" />
         <item itemvalue="Python.display live feed" />
-        <item itemvalue="Python.cleanGSI (1)" />
-        <item itemvalue="Python.mem3" />
       </list>
     </recent_temporary>
   </component>
@@ -232,7 +236,19 @@
       <workItem from="1604406430300" duration="9502000" />
       <workItem from="1604416793982" duration="480000" />
       <workItem from="1604419071871" duration="100000" />
-      <workItem from="1604421214010" duration="4417000" />
+      <workItem from="1604421214010" duration="6683000" />
+      <workItem from="1604441717594" duration="11345000" />
+      <workItem from="1604707916059" duration="3677000" />
+      <workItem from="1604951124318" duration="1194000" />
+      <workItem from="1604952360032" duration="534000" />
+      <workItem from="1604955180765" duration="992000" />
+      <workItem from="1604956617524" duration="4943000" />
+      <workItem from="1604961904517" duration="283000" />
+      <workItem from="1605129406895" duration="6000" />
+      <workItem from="1605526193365" duration="242000" />
+      <workItem from="1605753909414" duration="74000" />
+      <workItem from="1605759621677" duration="25000" />
+      <workItem from="1605793474348" duration="29000" />
     </task>
     <task id="LOCAL-00001" summary="stuff">
       <created>1585433696218</created>
@@ -367,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587166258040</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="saved version for rewrite">
+      <created>1604439406997</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1604439406997</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,53 +422,83 @@
     <MESSAGE value="stuff" />
     <MESSAGE value="changed a lot, slimmed it down getting rdy for managing the NN" />
     <MESSAGE value="got all data working need to add NN now" />
-    <option name="LAST_COMMIT_MESSAGE" value="got all data working need to add NN now" />
+    <MESSAGE value="saved version for rewrite" />
+    <option name="LAST_COMMIT_MESSAGE" value="saved version for rewrite" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="243" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605793491975">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="243" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605793491975" />
+    <state x="299" y="210" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1604708011306">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="299" y="210" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604708011306" />
+    <state x="556" y="88" key="CommitChangelistDialog2" timestamp="1604439406368">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="556" y="88" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1604439406368" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1604407228657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604407228657" />
-    <state width="1877" height="349" key="GridCell.Tab.0.bottom" timestamp="1604438649224">
+    <state width="1877" height="236" key="GridCell.Tab.0.bottom" timestamp="1604962188622">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="349" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604438649224" />
-    <state width="1877" height="349" key="GridCell.Tab.0.center" timestamp="1604438649224">
+    <state width="1397" height="322" key="GridCell.Tab.0.bottom/0.0.1440.1040@0.0.1440.1040" timestamp="1604952892453" />
+    <state width="1557" height="236" key="GridCell.Tab.0.bottom/0.0.1600.1160@0.0.1600.1160" timestamp="1604961017014" />
+    <state width="1877" height="236" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604962188622" />
+    <state width="1877" height="236" key="GridCell.Tab.0.center" timestamp="1604962188622">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="349" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604438649224" />
-    <state width="1877" height="349" key="GridCell.Tab.0.left" timestamp="1604438649224">
+    <state width="1397" height="322" key="GridCell.Tab.0.center/0.0.1440.1040@0.0.1440.1040" timestamp="1604952892453" />
+    <state width="1557" height="236" key="GridCell.Tab.0.center/0.0.1600.1160@0.0.1600.1160" timestamp="1604961017014" />
+    <state width="1877" height="236" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604962188622" />
+    <state width="1877" height="236" key="GridCell.Tab.0.left" timestamp="1604962188622">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="349" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604438649224" />
-    <state width="1877" height="349" key="GridCell.Tab.0.right" timestamp="1604438649224">
+    <state width="1397" height="322" key="GridCell.Tab.0.left/0.0.1440.1040@0.0.1440.1040" timestamp="1604952892453" />
+    <state width="1557" height="236" key="GridCell.Tab.0.left/0.0.1600.1160@0.0.1600.1160" timestamp="1604961017014" />
+    <state width="1877" height="236" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604962188622" />
+    <state width="1877" height="236" key="GridCell.Tab.0.right" timestamp="1604962188622">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="349" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604438649224" />
-    <state width="1877" height="338" key="GridCell.Tab.1.bottom" timestamp="1604412144701">
+    <state width="1397" height="322" key="GridCell.Tab.0.right/0.0.1440.1040@0.0.1440.1040" timestamp="1604952892453" />
+    <state width="1557" height="236" key="GridCell.Tab.0.right/0.0.1600.1160@0.0.1600.1160" timestamp="1604961017014" />
+    <state width="1877" height="236" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604962188622" />
+    <state width="1877" height="338" key="GridCell.Tab.1.bottom" timestamp="1604451602579">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604412144701" />
-    <state width="1877" height="338" key="GridCell.Tab.1.center" timestamp="1604412144701">
+    <state width="1877" height="338" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604451602579" />
+    <state width="1877" height="338" key="GridCell.Tab.1.center" timestamp="1604451602579">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604412144701" />
-    <state width="1877" height="338" key="GridCell.Tab.1.left" timestamp="1604412144701">
+    <state width="1877" height="338" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604451602579" />
+    <state width="1877" height="338" key="GridCell.Tab.1.left" timestamp="1604451602579">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604412144701" />
-    <state width="1877" height="338" key="GridCell.Tab.1.right" timestamp="1604412144701">
+    <state width="1877" height="338" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604451602579" />
+    <state width="1877" height="338" key="GridCell.Tab.1.right" timestamp="1604451602579">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604412144701" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1604438388714">
+    <state width="1877" height="338" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604451602579" />
+    <state x="446" y="162" width="916" height="708" key="SettingsEditor" timestamp="1605753923366">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1604438388714" />
+    <state x="384" y="183" key="SettingsEditor/0.0.1600.1160@0.0.1600.1160" timestamp="1604956691837" />
+    <state x="446" y="162" width="916" height="708" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605753923366" />
+    <state x="708" y="217" key="VCS.ChangeListViewerDialog" timestamp="1604450689908">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="708" y="217" key="VCS.ChangeListViewerDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604450689908" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1604408650772">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604408650772" />
+    <state x="0" y="0" width="1658" height="679" key="dock-window-1" timestamp="1604455389087">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="0" width="1658" height="679" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1604455389087" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -466,7 +519,9 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$LDSV.coverage" NAME="LDSV Coverage Results" MODIFIED="1604708738192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$NN.coverage" NAME="NN Coverage Results" MODIFIED="1604412100960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CS_GO_AI_2$main.coverage" NAME="main Coverage Results" MODIFIED="1604438649216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$test.coverage" NAME="test Coverage Results" MODIFIED="1604952031684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$main.coverage" NAME="main Coverage Results" MODIFIED="1604962166428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -28,17 +28,17 @@ def modelmake():
 
     return model
 
-def trainRL(model, reward_, did_, nnout_):
+def trainRL(model, reward_, did_, nnout_, images_):
     optimizer = tf.keras.optimizers.RMSprop(learning_rate=0.01, decay=0.99)
-
-    for reward, did, nnout in zip(reward_, did_, nnout_):
+    for reward, did, image in zip(reward_, did_, images_):
+        nnout = model.predict(image.reshape([-1, 1600, 1200, 3]))[0]  # gets NN outputed
+        did = tf.convert_to_tensor(did, dtype= tf.float32)
         with tf.GradientTape() as t:
             catCross = tf.losses.categorical_crossentropy(tf.convert_to_tensor(did, dtype=tf.float32),
                                                           tf.convert_to_tensor(nnout, dtype=tf.float32))
             lossComp = tf.math.multiply(reward, catCross)
 
         gradients = t.gradient(lossComp, model.trainable_variables)
-        print(len(gradients))
         optimizer.apply_gradients(zip(gradients, model.trainable_variables))
 
 

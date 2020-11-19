@@ -1,16 +1,25 @@
+import tensorflow as tf
+config = tf.compat.v1.ConfigProto(gpu_options = tf.compat.v1.GPUOptions(per_process_gpu_memory_fraction=0.8))
+config.gpu_options.allow_growth = True
+session = tf.compat.v1.Session(config=config)
+tf.compat.v1.keras.backend.set_session(session)
+
+import timeit
 import NN
-import matplotlib.pyplot as plt
 import threading
 import random
-import time
 from time import sleep
+import time
 from getdat import getalldat
 from getdat import ctrls
 import numpy as np
-from getdat import screen_grab
 import keyboard as kbd
-from statistics import mean
+import LDSV
+import d3dshot
 
+# key = ['time', 'ct rounds', 't rounds', 'round phase', 'bomb phase', 'players team', 'health', 'flashed', 'smoked', 'burning', 'round kills', 'round kills hs', 'kills', 'assists', 'deaths', 'mvps', 'score']
+# outputs = ['a', 'w', 's', 'd', 'aw', 'wd', 'as', 'ad', 'none', '+ or - size for x and y']
+outputs = ['a', 'w', 's', 'd', 'aw', 'wd', 'as', 'ad', 'none']  # , '+ or - size for x and y']
 
 class myThread(threading.Thread):#GSI listener and parser
     def __init__(self, threadID, name, ):
@@ -62,143 +71,121 @@ class myThread(threading.Thread):#GSI listener and parser
                     self.reward = difference[0] - difference[1]
                     self.reward = (self.reward / abs(self.reward))
                     self.new = True
+class agent():
 
-def softmax(x):#softmax funciton
-    e_x = np.exp(x - np.max(x))
-    return e_x / e_x.sum()
+    def __init__(self):
+        self.hyperparams = {'discount factor': 0.98}  # dicount factor
+        self.images = None
+        self.nnout = None
+        self.nnoutl = None
+        self.did = None
+        self.didl = None
+        self.rwdl = None
 
-def action(probs):#chooses what action to make
-    r = random.random()
-    index = 0
-    while (r >= 0 and index < len(probs)):
-        r -= probs[index]
-        index += 1
-    index -= 1
 
-    probs = np.zeros(9)
-    probs[index] = 1
-    return probs
+    def softmax(self, x):#softmax funciton
+        e_x = np.exp(x - np.max(x))
+        return e_x / e_x.sum()
 
-def sendinputs(do, shape):#send inputs to cs
-    if shape == (1200, 1600, 3):
-        width = shape[1]
-        height = shape[0]
-        move = do[:-3]
-        shoot = do[-3:]
-        ctrls.move(outputs[np.argmax(do)])
+    def action(self, probs):#chooses what action to make
         r = random.random()
-        if r <= move[-1]:
-            ctrls.shoot(width * shoot[0], height * shoot[1])
-        else:
-            ctrls.moveMouse(width * (shoot[0]-0.5), height * (shoot[1]-0.5))
+        index = 0
+        while (r >= 0 and index < len(probs)):
+            r -= probs[index]
+            index += 1
+        index -= 1
 
-def discount_rewards(r, gamma):#backpropergates rewards w discount factor
-    pointer = 0
-    length = 0
-    for x in range(len(r)-1, 0, -1):
-        if r[x] != 0:
-            pointer = r[x]
-        else:
-            r[x] = pointer * gamma ** (length + 1)
-            length += 1
+        probs = np.zeros(9)
+        probs[index] = 1
+        return probs
 
-    return r
+    def sendinputs(self, do, shape):#send inputs to cs
+        if shape == (1200, 1600, 3):#makes sure CS is open
+            height = shape[0]
+            width = shape[1]
+            move = do[:-3]
+            shoot = do[-3:]
+            ctrls.move(outputs[np.argmax(move)])
+            r = random.random()
+            if r <= shoot[2]:
+                ctrls.shoot(width * shoot[0], height * shoot[1])
+            else:
+                ctrls.moveMouse(width * shoot[0], height * shoot[1])
 
-def restart():#restarts the round
-    #exec RL1
-    if screen_grab.grab_screen().shape == (1200, 1600, 3):
-        kbd.press('h')
-        sleep(1.5)
-        ctrls.tap('x')
+    def discount_rewards(self, r, gamma):#backpropergates rewards w discount factor
+        pointer = 0
+        length = 0
+        for x in range(len(r)-1, 0, -1):
+            if r[x] != 0:
+                pointer = r[x]
+            else:
+                r[x] = pointer * gamma ** (length + 1)
+                length += 1
 
-#key = ['time', 'ct rounds', 't rounds', 'round phase', 'bomb phase', 'players team', 'health', 'flashed', 'smoked', 'burning', 'round kills', 'round kills hs', 'kills', 'assists', 'deaths', 'mvps', 'score']
-#outputs = ['a', 'w', 's', 'd', 'aw', 'wd', 'as', 'ad', 'none', '+ or - size for x and y']
-outputs = ['a', 'w', 's', 'd', 'aw', 'wd', 'as', 'ad', 'none']#, '+ or - size for x and y']
+        return r
 
-hyperparams = {'discount factor': 0.98}#dicount factor
+    def restart(self):#restarts the round
+        #exec RL1
+        if np.shape(d.screenshot()) == (1200, 1600, 3):
+            sleep(1)
+            kbd.press('h')
+            sleep(1.5)
+            ctrls.tap('x')
 
-def setup():
+    def start(self, model):
+
+        while np.shape(d.screenshot()) != (1200, 1600, 3):#if in game
+            pass
+
+        #self.restart()#restarts cs go game
+
+        while 1:
+            start = time.time()
+            observation = d.screenshot()#grabs new screen data
+
+            if observation.shape == (1200, 1600, 3):#if its of the game
+                self.nnout = model.predict(observation.reshape([-1, 1600, 1200, 3]))[0]#gets NN ouputad
+                self.did = np.append(self.action(self.softmax(np.array(self.nnout[:-3]))), self.nnout[-3:])#puts part of it though a soft max
+                #self.sendinputs(self.did, observation.shape)#send inputs to cs go
+
+                if get_data.new == False:#same as earlier but the reward is 0 as it needs to be back filled
+                    if self.rwdl == None:
+                        self.rwdl = [0]
+                        self.didl = [self.did]
+                        self.nnoutl = [self.nnout]
+                        self.images = [observation]
+                    else:
+                        self.rwdl.append(0)
+                        self.didl.append(self.did)
+                        self.nnoutl.append(self.nnout)
+                        self.images.append(observation)
+
+                if self.rwdl != None and get_data.new == True:#if theres a cahnge in the GSI we care about
+                    get_data.new = False#let it knows its going to process the reward
+                    self.rwdl.append(get_data.reward)
+                    self.didl.append(self.did)
+                    self.nnoutl.append(self.nnout)
+                    self.images.append(observation)
+                    ctrls.move('none')
+                    self.rwdl = self.discount_rewards(self.rwdl, self.hyperparams['discount factor'])#back prpergates rewards w decay
+                    return NN.trainRL(model, self.rwdl, self.didl, self.nnoutl)#trains NN 1 step for each observation
+            print(round(1/(time.time() - start),1)," FPS")
+
+if __name__ == '__main__':
     open('C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\data.txt', "w+").close()#resets text file
     getalldat.GSIstart()#starts GSI server
     get_data = myThread(1, 'data boi time')#starts the code to perpertualy look for newly updated txt file
 
     # Start new Threads
     get_data.start()
-    model = NN.modelmake()
+    model = LDSV.loadWeights("RLCS.h5")
 
-    rwd = ['a']#reward list
-    passed = True #past threshold to begin waiting for a kill or death
+    d = d3dshot.create(capture_output="numpy", frame_buffer_size=1)
 
-    runs = []
+    while 1:
+        open('C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\data.txt',"w+").close()#resets text file
+        model, stats = agent().start(model)
+        LDSV.saveWeights(model, "RLCS.h5")
 
-    if screen_grab.grab_screen().shape == (1200, 1600, 3):#if in game
-        restart()#restartes cs go game
-
-    for x in range(2000):#100 loops though
-        observation = screen_grab.grab_screen()#grabs new screen data
-
-        if observation.shape == (1200, 1600, 3):#if its of the game
-            nnout = model.predict(observation.reshape([-1, 1600, 1200, 3]))[0]#gets NN ouput
-            did = np.append(action(softmax(np.array(nnout[:-3]))), nnout[-3:])#puts part of it though a soft max
-            #sendinputs(did, observation.shape)#send inputs to cs go
-
-            if get_data.new == True:#if theres a new record from the GSI
-                get_data.new = False #let it knows its processed the reward
-
-                if type(rwd[0]) == str: #initlaises tracking vars
-                    rwd = [get_data.reward]
-                    didl = [did]
-                    nnoutl = [nnout]
-
-                else:
-                    rwdl.append(get_data.reward)
-                    didl.append(did)
-                    nnoutl.append(nnout)
-
-                if get_data.reward == -1:
-                    ctrls.tap('x')
-
-                if passed == True: #if the number of itterations has passed a batch size
-                    passed = False
-                    if rwd != [1.0]:
-                        ctrls.move('none')
-                        rwd = discount_rewards(rwd, hyperparams['discount factor'])#back prpergates rewards w decay
-                        model, losses = NN.trainRL(model, rwdl, didl, nnoutl)#trains NN 1 step for each observation
-
-                        runs.append(mean(losses))
-
-                        #resets vars
-                        rwd = ['a']
-                        didl = ['a']
-                        nnoutl = ['a']
-                        images = ['a']
-
-                        ctrls.tap('h')
-                        sleep(3)
-                        ctrls.tap('x')
-
-
-            else:#same as earlier but the reward is 0 as it needs to be back filled
-                if type(rwd[0]) == str:
-                    rwd = [0]
-                    didl = [did]
-                    nnoutl = [nnout]
-                    images = [observation]
-                else:
-                    rwdl.append(0)
-                    didl.append(did)
-                    nnoutl.append(nnout)
-                    images.append(observation)
-
-            if len(rwd)%4 == 0:#trigger for batch size
-                pass
-            #print('fps:', 1/(time.time()-s))#prints fps
-
-
-    plt.plot(runs)
-    plt.show()
-
-
-
-if __name__ == '__main__':
-    setup()
+#todo: make more effiecient by running the AI in a seperate thread and it
+# just returning its action and all this extra stuff is done else wher
