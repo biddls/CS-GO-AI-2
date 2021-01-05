@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7489195-bd07-4aac-8de4-0305db352674" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CS GO AI 2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CS GO AI 2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN.py" beforeDir="false" afterPath="$PROJECT_DIR$/NN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getdat/ctrls.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdat/ctrls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +258,8 @@
       <workItem from="1609625654117" duration="2166000" />
       <workItem from="1609634559498" duration="9512000" />
       <workItem from="1609802670240" duration="5982000" />
-      <workItem from="1609825116426" duration="316000" />
+      <workItem from="1609825116426" duration="380000" />
+      <workItem from="1609825515983" duration="52000" />
     </task>
     <task id="LOCAL-00001" summary="stuff">
       <created>1585433696218</created>

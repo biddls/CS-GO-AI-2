@@ -3,3 +3,4 @@ useless
 output.json
 venv
 .idea
+__pycache__
