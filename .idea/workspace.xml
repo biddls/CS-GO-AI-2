@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7489195-bd07-4aac-8de4-0305db352674" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/LDSV.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CS GO AI 2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CS GO AI 2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NN.py" beforeDir="false" afterPath="$PROJECT_DIR$/NN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getdat/ctrls.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdat/ctrls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +58,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -66,7 +69,8 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -124,28 +128,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="display live feed" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="CS GO AI 2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/useless" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/useless/display live feed.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CS GO AI 2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -160,6 +142,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="screen_grab" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CS GO AI 2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/getdat" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/getdat/screen_grab.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -193,10 +197,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.screen_grab" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.NN" />
         <item itemvalue="Python.LDSV" />
-        <item itemvalue="Python.display live feed" />
       </list>
     </recent_temporary>
   </component>
@@ -249,6 +253,18 @@
       <workItem from="1605753909414" duration="74000" />
       <workItem from="1605759621677" duration="25000" />
       <workItem from="1605793474348" duration="29000" />
+      <workItem from="1606471626517" duration="90000" />
+      <workItem from="1606765908440" duration="1033000" />
+      <workItem from="1606815122435" duration="88000" />
+      <workItem from="1606826501768" duration="42000" />
+      <workItem from="1608129303801" duration="96000" />
+      <workItem from="1609021066255" duration="630000" />
+      <workItem from="1609022257199" duration="93000" />
+      <workItem from="1609022358781" duration="62000" />
+      <workItem from="1609625654117" duration="2166000" />
+      <workItem from="1609634559498" duration="9512000" />
+      <workItem from="1609802670240" duration="5982000" />
+      <workItem from="1609825116426" duration="316000" />
     </task>
     <task id="LOCAL-00001" summary="stuff">
       <created>1585433696218</created>
@@ -425,81 +441,6 @@
     <MESSAGE value="saved version for rewrite" />
     <option name="LAST_COMMIT_MESSAGE" value="saved version for rewrite" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="243" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605793491975">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="243" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605793491975" />
-    <state x="299" y="210" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1604708011306">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="299" y="210" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604708011306" />
-    <state x="556" y="88" key="CommitChangelistDialog2" timestamp="1604439406368">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="556" y="88" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1604439406368" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1604407228657">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604407228657" />
-    <state width="1877" height="236" key="GridCell.Tab.0.bottom" timestamp="1604962188622">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1397" height="322" key="GridCell.Tab.0.bottom/0.0.1440.1040@0.0.1440.1040" timestamp="1604952892453" />
-    <state width="1557" height="236" key="GridCell.Tab.0.bottom/0.0.1600.1160@0.0.1600.1160" timestamp="1604961017014" />
-    <state width="1877" height="236" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604962188622" />
-    <state width="1877" height="236" key="GridCell.Tab.0.center" timestamp="1604962188622">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1397" height="322" key="GridCell.Tab.0.center/0.0.1440.1040@0.0.1440.1040" timestamp="1604952892453" />
-    <state width="1557" height="236" key="GridCell.Tab.0.center/0.0.1600.1160@0.0.1600.1160" timestamp="1604961017014" />
-    <state width="1877" height="236" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604962188622" />
-    <state width="1877" height="236" key="GridCell.Tab.0.left" timestamp="1604962188622">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1397" height="322" key="GridCell.Tab.0.left/0.0.1440.1040@0.0.1440.1040" timestamp="1604952892453" />
-    <state width="1557" height="236" key="GridCell.Tab.0.left/0.0.1600.1160@0.0.1600.1160" timestamp="1604961017014" />
-    <state width="1877" height="236" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604962188622" />
-    <state width="1877" height="236" key="GridCell.Tab.0.right" timestamp="1604962188622">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1397" height="322" key="GridCell.Tab.0.right/0.0.1440.1040@0.0.1440.1040" timestamp="1604952892453" />
-    <state width="1557" height="236" key="GridCell.Tab.0.right/0.0.1600.1160@0.0.1600.1160" timestamp="1604961017014" />
-    <state width="1877" height="236" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604962188622" />
-    <state width="1877" height="338" key="GridCell.Tab.1.bottom" timestamp="1604451602579">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604451602579" />
-    <state width="1877" height="338" key="GridCell.Tab.1.center" timestamp="1604451602579">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604451602579" />
-    <state width="1877" height="338" key="GridCell.Tab.1.left" timestamp="1604451602579">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604451602579" />
-    <state width="1877" height="338" key="GridCell.Tab.1.right" timestamp="1604451602579">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604451602579" />
-    <state x="446" y="162" width="916" height="708" key="SettingsEditor" timestamp="1605753923366">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="384" y="183" key="SettingsEditor/0.0.1600.1160@0.0.1600.1160" timestamp="1604956691837" />
-    <state x="446" y="162" width="916" height="708" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605753923366" />
-    <state x="708" y="217" key="VCS.ChangeListViewerDialog" timestamp="1604450689908">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="708" y="217" key="VCS.ChangeListViewerDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604450689908" />
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1604408650772">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604408650772" />
-    <state x="0" y="0" width="1658" height="679" key="dock-window-1" timestamp="1604455389087">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="0" y="0" width="1658" height="679" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1604455389087" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -519,9 +460,10 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$main.coverage" NAME="main Coverage Results" MODIFIED="1609808836782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$test.coverage" NAME="test Coverage Results" MODIFIED="1604952031684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$screen_grab.coverage" NAME="screen_grab Coverage Results" MODIFIED="1609644834500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/getdat" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$LDSV.coverage" NAME="LDSV Coverage Results" MODIFIED="1604708738192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$NN.coverage" NAME="NN Coverage Results" MODIFIED="1604412100960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CS_GO_AI_2$test.coverage" NAME="test Coverage Results" MODIFIED="1604952031684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CS_GO_AI_2$main.coverage" NAME="main Coverage Results" MODIFIED="1604962166428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

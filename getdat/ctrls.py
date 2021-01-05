@@ -1,5 +1,6 @@
 import keyboard as kbd
 import pyautogui as pygu
+import numpy as np
 from time import sleep
 
 pygu.FAILSAFE = False
@@ -60,3 +61,12 @@ def shoot(x, y):
 
 def moveMouse(x, y):
     pygu.moveRel(x, y)
+
+
+def restart(img):  # restarts the round
+    # exec RL1
+    if np.shape(img) == (108, 144, 3):
+        sleep(1)
+        kbd.press('h')
+        sleep(1.5)
+        tap('x')

@@ -1,5 +1,8 @@
+import os
+from numba import jit
 import tensorflow as tf
-config = tf.compat.v1.ConfigProto(gpu_options = tf.compat.v1.GPUOptions(per_process_gpu_memory_fraction=0.8))
+
+config = tf.compat.v1.ConfigProto(gpu_options=tf.compat.v1.GPUOptions(per_process_gpu_memory_fraction=0.8))
 config.gpu_options.allow_growth = True
 session = tf.compat.v1.Session(config=config)
 tf.compat.v1.keras.backend.set_session(session)
@@ -16,13 +19,17 @@ import numpy as np
 import keyboard as kbd
 import LDSV
 import d3dshot
+import cv2
+from win32gui import GetWindowText, GetForegroundWindow
+from matplotlib import pyplot as plt
 
 # key = ['time', 'ct rounds', 't rounds', 'round phase', 'bomb phase', 'players team', 'health', 'flashed', 'smoked', 'burning', 'round kills', 'round kills hs', 'kills', 'assists', 'deaths', 'mvps', 'score']
 # outputs = ['a', 'w', 's', 'd', 'aw', 'wd', 'as', 'ad', 'none', '+ or - size for x and y']
 outputs = ['a', 'w', 's', 'd', 'aw', 'wd', 'as', 'ad', 'none']  # , '+ or - size for x and y']
 
-class myThread(threading.Thread):#GSI listener and parser
-    def __init__(self, threadID, name, ):
+
+class myThread(threading.Thread):  # GSI listener and parser
+    def __init__(self, threadID, name):
         threading.Thread.__init__(self)
         self.threadID = threadID
         self.name = name
@@ -30,11 +37,11 @@ class myThread(threading.Thread):#GSI listener and parser
         self.old = []
         self.reward = 0
         self.new = False
+        print("Starting " + self.name)
 
     def run(self):
-        print("Starting " + self.name)
         while True:
-            #parsing in file
+            # parsing in file
             file = open(self.path)
             data = file.read().split('\n')
 
@@ -47,14 +54,14 @@ class myThread(threading.Thread):#GSI listener and parser
                         pass
 
             data = np.array(data)[:-1]
-            #if there is data
+            # if there is data
             if len(data) > 0:
                 difference = []
                 if len(data) > 1:
 
                     new = data[-1]
                     old = data[-2]
-                    #if there is a change
+                    # if there is a change
                     if new != self.old:
                         zip_object = zip(new, old)
                         for list1_i, list2_i in zip_object:
@@ -62,130 +69,186 @@ class myThread(threading.Thread):#GSI listener and parser
 
                     self.old = new
 
-                #if theres 1 thing in list then thats the new difrence
+                # if theres 1 thing in list then thats the new difrence
                 elif len(data) == 1:
                     if max(data[0]) == 1:
                         difference = data[0]
-                #calulates reward
+                # calulates reward
                 if len(difference) != 0 and sum(difference) < 2:
                     self.reward = difference[0] - difference[1]
                     self.reward = (self.reward / abs(self.reward))
                     self.new = True
-class agent():
-
-    def __init__(self):
-        self.hyperparams = {'discount factor': 0.98}  # dicount factor
-        self.images = None
-        self.nnout = None
-        self.nnoutl = None
-        self.did = None
-        self.didl = None
-        self.rwdl = None
 
 
-    def softmax(self, x):#softmax funciton
-        e_x = np.exp(x - np.max(x))
-        return e_x / e_x.sum()
+class Capture(threading.Thread):
+    def __init__(self, threadID, name):
+        threading.Thread.__init__(self)
+        self.threadID = threadID
+        self.name = name
+        self.image = None
+        self.d = d3dshot.create(capture_output="numpy", frame_buffer_size=1)
 
-    def action(self, probs):#chooses what action to make
-        r = random.random()
-        index = 0
-        while (r >= 0 and index < len(probs)):
-            r -= probs[index]
-            index += 1
-        index -= 1
-
-        probs = np.zeros(9)
-        probs[index] = 1
-        return probs
-
-    def sendinputs(self, do, shape):#send inputs to cs
-        if shape == (1200, 1600, 3):#makes sure CS is open
-            height = shape[0]
-            width = shape[1]
-            move = do[:-3]
-            shoot = do[-3:]
-            ctrls.move(outputs[np.argmax(move)])
-            r = random.random()
-            if r <= shoot[2]:
-                ctrls.shoot(width * shoot[0], height * shoot[1])
-            else:
-                ctrls.moveMouse(width * shoot[0], height * shoot[1])
-
-    def discount_rewards(self, r, gamma):#backpropergates rewards w discount factor
-        pointer = 0
-        length = 0
-        for x in range(len(r)-1, 0, -1):
-            if r[x] != 0:
-                pointer = r[x]
-            else:
-                r[x] = pointer * gamma ** (length + 1)
-                length += 1
-
-        return r
-
-    def restart(self):#restarts the round
-        #exec RL1
-        if np.shape(d.screenshot()) == (1200, 1600, 3):
-            sleep(1)
-            kbd.press('h')
-            sleep(1.5)
-            ctrls.tap('x')
-
-    def start(self, model):
-
-        while np.shape(d.screenshot()) != (1200, 1600, 3):#if in game
-            pass
-
-        #self.restart()#restarts cs go game
-
+    def run(self):
+        print("Starting " + self.name)
+        counter = 0
+        start = time.time()
         while 1:
-            start = time.time()
-            observation = d.screenshot()#grabs new screen data
+            self.image = cv2.resize(self.d.screenshot(), dsize=(144, 108), interpolation=cv2.INTER_NEAREST) / 255
 
-            if observation.shape == (1200, 1600, 3):#if its of the game
-                self.nnout = model.predict(observation.reshape([-1, 1600, 1200, 3]))[0]#gets NN ouputad
-                self.did = np.append(self.action(self.softmax(np.array(self.nnout[:-3]))), self.nnout[-3:])#puts part of it though a soft max
-                #self.sendinputs(self.did, observation.shape)#send inputs to cs go
+            counter += 1
+            if (time.time() - start) > 1:
+                print("FPS: ", counter / (time.time() - start))
+                counter = 0
+                start = time.time()
 
-                if get_data.new == False:#same as earlier but the reward is 0 as it needs to be back filled
-                    if self.rwdl == None:
-                        self.rwdl = [0]
-                        self.didl = [self.did]
-                        self.nnoutl = [self.nnout]
-                        self.images = [observation]
-                    else:
-                        self.rwdl.append(0)
-                        self.didl.append(self.did)
-                        self.nnoutl.append(self.nnout)
-                        self.images.append(observation)
+    def getImg(self):
+        return self.image
 
-                if self.rwdl != None and get_data.new == True:#if theres a cahnge in the GSI we care about
-                    get_data.new = False#let it knows its going to process the reward
-                    self.rwdl.append(get_data.reward)
-                    self.didl.append(self.did)
-                    self.nnoutl.append(self.nnout)
-                    self.images.append(observation)
-                    ctrls.move('none')
-                    self.rwdl = self.discount_rewards(self.rwdl, self.hyperparams['discount factor'])#back prpergates rewards w decay
-                    return NN.trainRL(model, self.rwdl, self.didl, self.nnoutl)#trains NN 1 step for each observation
-            print(round(1/(time.time() - start),1)," FPS")
+
+@jit
+def softmax(x):  # softmax funciton
+    e_x = np.exp(x - np.max(x))
+    return e_x / e_x.sum()
+
+
+def action(probs):  # chooses what action to make
+    r = random.random()
+    index = 0
+    while (r >= 0 and index < len(probs)):
+        r -= probs[index]
+        index += 1
+    index -= 1
+
+    probs = np.zeros(9)
+    probs[index] = 1
+    return probs
+
+
+def actionMouseOnly(actions):  # chooses what action to make
+    r = random.random()
+    if r <= actions[2]:
+        actions[2] = 1
+    else:
+        actions[2] = 0
+    return actions
+
+
+def sendinputs(do, shape):  # send inputs to cs
+    if shape == (1200, 1600, 3):  # makes sure CS is open
+        height = shape[0]
+        width = shape[1]
+        move = do[:-3]
+        shoot = do[-3:]
+        ctrls.move(outputs[np.argmax(move)])
+        r = random.random()
+        if r <= shoot[2]:
+            ctrls.shoot(width * shoot[0], height * shoot[1])
+        else:
+            ctrls.moveMouse(width * shoot[0], height * shoot[1])
+
+
+def sendinputsMouseOnly(do, shape):  # send inputs to cs
+    if shape == (1920, 1080, 3):  # makes sure CS is open
+        if do[2] == 1:
+            ctrls.shoot(shape[0] * do[0], shape[1] * do[1])
+        else:
+            ctrls.moveMouse(shape[0] * do[0], shape[1] * do[1])
+
+@jit
+def discount_rewards(r, gamma):  # backpropergates rewards w discount factor
+    pointer = 0
+    length = 0
+    for x in range(len(r) - 1, 0, -1):
+        if r[x] != 0:
+            pointer = r[x]
+        else:
+            r[x] = pointer * gamma ** (length + 1)
+            length += 1
+
+    return r
+
+
+class agentBeginnerMouseOnlyTraining():
+
+    def __init__(self, NNmodel):
+        self.HyperParams = {'discount factor': 0.98}  # discount factor
+        self.images = []
+        # self.NNOut = []
+        # self.NNOutputList = []
+        self.did = []
+        self.DidList = []
+        self.RewardList = []
+        self.model = NNmodel
+
+    def start(self):
+        # self.restart()#restarts cs go game
+
+        counter = 0
+        start = time.time()
+        while 1:
+            observation = capture.getImg()  # grabs new screen data
+            if GetWindowText(GetForegroundWindow()) == "Counter-Strike: Global Offensive":
+                # if its of the game
+                # self.NNOut = self.model.predict(observation.reshape([-1, 108, 144, 3]))[0]  # gets NN outputted
+                self.did = actionMouseOnly(self.model.predict(observation.reshape([-1, 108, 144, 3]))[
+                                               0])  # ignore fn puts part of it though a soft max
+                sendinputsMouseOnly(self.did, observation.shape)  # send inputs to cs go
+
+                # if get_data.new == False:  # same as earlier but the reward is 0 as it needs to be back filled
+                #     self.RewardList.append(0)
+                #     self.DidList.append(self.did)
+                #     # self.NNOutputList.append(self.NNOut)
+                #     self.images.append(observation)
+                #
+                # if self.RewardList != None and get_data.new == True:  # if theres a change in the GSI we care about
+                #     get_data.new = False  # let it knows its going to process the reward
+                #     self.RewardList.append(get_data.reward)
+                #     self.DidList.append(self.did)
+                #     # self.NNOutputList.append(self.NNOut)
+                #     self.images.append(observation)
+                #     ctrls.move('none')
+                #     self.RewardList = self.discount_rewards(self.RewardList, self.HyperParams['discount factor'])  # back propagates rewards w decay
+
+                while temp := capture.getImg() == observation:
+                    pass
+
+                self.model = NN.trainRL1Sample(self.model, temp, self.did)  # trains NN 1 step for each observation
+            # counter += 1
+            # if (time.time() - start) > 1:
+            #     print("FPS: ", counter / (time.time() - start))
+            #     counter = 0
+            #     start = time.time()
+            #     pass
+
 
 if __name__ == '__main__':
-    open('C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\data.txt', "w+").close()#resets text file
-    getalldat.GSIstart()#starts GSI server
-    get_data = myThread(1, 'data boi time')#starts the code to perpertualy look for newly updated txt file
+    print("just give it a few seconds to warm up")
+    time.sleep(5)
+    open('C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\data.txt',
+         "w+").close()  # resets text file
+    getalldat.GSIstart()  # starts GSI server
 
     # Start new Threads
+    get_data = myThread(1, 'data boi time')  # starts the code to perpetually look for newly updated txt file
     get_data.start()
-    model = LDSV.loadWeights("RLCS.h5")
 
-    d = d3dshot.create(capture_output="numpy", frame_buffer_size=1)
+    capture = Capture(1, 'image boi')
+    capture.start()
+
+    if os.path.exists("RLCS.h5"):
+        model = LDSV.loadWeights("RLCS.h5")
+    else:
+        model = NN.modelmake()
+        LDSV.saveWeight(model, "RLCS.h5")
+
+    print(model.summary())
 
     while 1:
-        open('C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\data.txt',"w+").close()#resets text file
-        model, stats = agent().start(model)
-        LDSV.saveWeights(model, "RLCS.h5")
+        open('C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\data.txt',
+             "w+").close()  # resets text file
+        agentBeginnerMouseOnlyTraining(model).start()
+        LDSV.saveWeight(model, "RLCS.h5")
 
-#todo: make more effiecient by running the AI in a seperate thread and it
-# just returning its action and all this extra stuff is done else wher
+# todo: make more effiecient by running the AI in a seperate thread and it
+# todo: just returning its action and all this extra stuff is done else where
+# todo: https://github.com/403-Fruit/csctl
