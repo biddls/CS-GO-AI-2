@@ -34,6 +34,11 @@ def trainRL(model, reward_, did_, nnout_, images_):
 
 def trainRL1Sample(model, reward_, did_):
     optimizer = tf.keras.optimizers.RMSprop(learning_rate=0.01, decay=0.99)
+    # np load in target frames
+    # for each x
+    #   categorical cross entropy on the 2 images to get error
+    #   average these scores
+    #   update weights to minimise the error
     for reward, did in zip(reward_, did_):
         did = tf.convert_to_tensor(did, dtype= tf.float32)
         with tf.GradientTape() as t:
@@ -44,9 +49,9 @@ def trainRL1Sample(model, reward_, did_):
 
     return model
 
-"""reward = np.array(np.load('reward.npy'))
-did = np.load('did.npy')
-nnout = np.load('nnout.npy')
-print(len(did[0]))
-model = modelmake()
-trainRL(model, reward, did, nnout)"""
+# reward = np.array(np.load('reward.npy'))
+# did = np.load('did.npy')
+# nnout = np.load('nnout.npy')
+# print(len(did[0]))
+# model = modelmake()
+# trainRL(model, reward, did, nnout)

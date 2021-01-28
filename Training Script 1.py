@@ -90,16 +90,16 @@ class Capture(threading.Thread):
 
     def run(self):
         print("Starting " + self.name)
-        counter = 0
-        start = time.time()
+        # counter = 0
+        # start = time.time()
         while 1:
-            self.image = cv2.resize(self.d.screenshot(), dsize=(144, 108), interpolation=cv2.INTER_NEAREST) / 255
+            self.image = (cv2.resize(self.d.screenshot(), dsize=(144, 108), interpolation=cv2.INTER_NEAREST) / 255).reshape([-1, 108, 144, 3])
 
-            counter += 1
-            if (time.time() - start) > 1:
-                print("FPS: ", counter / (time.time() - start))
-                counter = 0
-                start = time.time()
+            # counter += 1
+            # if (time.time() - start) > 1:
+            #     print("FPS: ", counter / (time.time() - start))
+            #     counter = 0
+            #     start = time.time()
 
     def getImg(self):
         return self.image
@@ -147,12 +147,11 @@ def sendinputs(do, shape):  # send inputs to cs
             ctrls.moveMouse(width * shoot[0], height * shoot[1])
 
 
-def sendinputsMouseOnly(do, shape):  # send inputs to cs
-    if shape == (1920, 1080, 3):  # makes sure CS is open
+def sendinputsMouseOnly(do):  # send inputs to cs
         if do[2] == 1:
-            ctrls.shoot(shape[0] * do[0], shape[1] * do[1])
+            ctrls.shoot(1920 * do[0], 1080 * do[1])
         else:
-            ctrls.moveMouse(shape[0] * do[0], shape[1] * do[1])
+            ctrls.moveMouse(1920 * do[0], 1080 * do[1])
 
 @jit
 def discount_rewards(r, gamma):  # backpropergates rewards w discount factor
@@ -186,20 +185,24 @@ class agentBeginnerMouseOnlyTraining():
         counter = 0
         start = time.time()
         while 1:
-            observation = capture.getImg()  # grabs new screen data
             if GetWindowText(GetForegroundWindow()) == "Counter-Strike: Global Offensive":
-                # if its of the game
-                # self.NNOut = self.model.predict(observation.reshape([-1, 108, 144, 3]))[0]  # gets NN outputted
-                self.did = actionMouseOnly(self.model.predict(observation.reshape([-1, 108, 144, 3]))[
-                                               0])  # ignore fn puts part of it though a soft max
-                sendinputsMouseOnly(self.did, observation.shape)  # send inputs to cs go
 
+                observation = capture.getImg()  # grabs new screen data
+
+                # # if its of the game
+                # self.NNOut = self.model.predict(observation.reshape([-1, 108, 144, 3]))[0]  # gets NN outputted
+
+                self.did = actionMouseOnly(self.model.predict(observation)[0])  # ignore fn puts part of it though a soft max
+                sendinputsMouseOnly(self.did)  # send inputs to cs go
+
+                #if rewards list is empty make a new one
                 # if get_data.new == False:  # same as earlier but the reward is 0 as it needs to be back filled
                 #     self.RewardList.append(0)
                 #     self.DidList.append(self.did)
                 #     # self.NNOutputList.append(self.NNOut)
                 #     self.images.append(observation)
                 #
+                #if rewards list is populated add to it
                 # if self.RewardList != None and get_data.new == True:  # if theres a change in the GSI we care about
                 #     get_data.new = False  # let it knows its going to process the reward
                 #     self.RewardList.append(get_data.reward)
@@ -209,16 +212,18 @@ class agentBeginnerMouseOnlyTraining():
                 #     ctrls.move('none')
                 #     self.RewardList = self.discount_rewards(self.RewardList, self.HyperParams['discount factor'])  # back propagates rewards w decay
 
-                while temp := capture.getImg() == observation:
+                while temp := capture.getImg().all() == observation.all():
                     pass
 
-                self.model = NN.trainRL1Sample(self.model, temp, self.did)  # trains NN 1 step for each observation
-            # counter += 1
-            # if (time.time() - start) > 1:
-            #     print("FPS: ", counter / (time.time() - start))
-            #     counter = 0
-            #     start = time.time()
-            #     pass
+                # train model
+                # self.model = NN.trainRL1Sample(self.model, temp, self.did)  # trains NN 1 step for each observation
+
+                counter += 1
+                if (time.time() - start) > 1:
+                    print("FPS: ", counter / (time.time() - start))
+                    counter = 0
+                    start = time.time()
+                    pass
 
 
 if __name__ == '__main__':
@@ -249,6 +254,6 @@ if __name__ == '__main__':
         agentBeginnerMouseOnlyTraining(model).start()
         LDSV.saveWeight(model, "RLCS.h5")
 
-# todo: make more effiecient by running the AI in a seperate thread and it
+# todo: make more efficient by running the AI in a separate thread and it
 # todo: just returning its action and all this extra stuff is done else where
 # todo: https://github.com/403-Fruit/csctl
