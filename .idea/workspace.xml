@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7489195-bd07-4aac-8de4-0305db352674" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Training Script 2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NN.py" beforeDir="false" afterPath="$PROJECT_DIR$/NN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training Script 1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RLCS.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training Script 1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training Script 1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/did.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nnout.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reward.npy" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +63,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Biddls" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -80,7 +84,7 @@
       <recent name="C:\Users\thoma\Downloads\GoTimer-master" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Training Script 1">
+  <component name="RunManager" selected="Python.NN">
     <configuration name="LDSV" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CS GO AI 2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -107,9 +111,6 @@
       <module name="CS GO AI 2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -125,7 +126,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Training Script 1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Training Script HLP" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CS GO AI 2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -138,7 +139,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\Training Script 1.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\Training Script HLP.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -193,10 +194,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Training Script 1" />
+        <item itemvalue="Python.NN" />
+        <item itemvalue="Python.Training Script HLP" />
         <item itemvalue="Python.screen_grab" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.NN" />
         <item itemvalue="Python.LDSV" />
       </list>
     </recent_temporary>
@@ -268,7 +269,9 @@
       <workItem from="1609915433516" duration="2151000" />
       <workItem from="1609991194775" duration="110000" />
       <workItem from="1610020609590" duration="89000" />
-      <workItem from="1611875958837" duration="299000" />
+      <workItem from="1611875958837" duration="5823000" />
+      <workItem from="1612436968232" duration="16000" />
+      <workItem from="1612532026991" duration="7138000" />
     </task>
     <task id="LOCAL-00001" summary="stuff">
       <created>1585433696218</created>

@@ -1,6 +1,55 @@
+import math
+import time
+
+import PIL
 import tensorflow as tf
 from tensorflow.keras import layers, models
 import numpy as np
+import os
+import matplotlib.pyplot as plt
+import cv2
+
+def paddPerams(shape, off):
+    y1 = math.floor(shape[0] * off)
+    y2 = math.floor(shape[0] * (1-off))
+    x1 = math.floor(shape[1] * off)
+    x2 = math.floor(shape[1] * (1-off))
+
+    return [y1, y2, x1, x2]
+
+def saveNp():
+    images = loadIm("training.npy")
+    temp = None
+    for x in images:
+        if temp is None:
+            temp = x/6
+        else:
+            temp += x/6
+    temp = temp.astype(int)
+    np.save("avHLP.npy", temp)
+
+def imgPrep():
+    os.chdir("HLP")
+    files = [x for x in os.listdir() if x[-4:] == '.png']
+    temp = None
+    for file in files:
+        frame = PIL.Image.open(file)
+        frame = frame.convert("RGB")
+        frame = np.asarray(frame)
+        frame = cv2.resize(frame, dsize=(96, 108), interpolation=cv2.INTER_LANCZOS4)
+        dims = paddPerams(frame.shape, 0.2)
+        frame = frame[dims[0]:dims[1]][dims[2]:dims[3]]
+        if temp is None:
+            temp = frame
+        else:
+            temp = np.concatenate((temp, frame), axis= 1)
+
+    np.save("training.npy", temp)
+
+def loadIm(path):
+    os.chdir("HLP")
+    return np.split(np.load(path), 6, axis= 1)
+
 
 def modelmake():
     #https://www.scitepress.org/papers/2018/67520/67520.pdf
@@ -18,6 +67,7 @@ def modelmake():
     model.add(layers.Dense(3,   activation= 'sigmoid'))
     return model
 
+
 def trainRL(model, reward_, did_, nnout_, images_):
     optimizer = tf.keras.optimizers.RMSprop(learning_rate=0.01, decay=0.99)
     for reward, did, image in zip(reward_, did_, images_):
@@ -32,26 +82,22 @@ def trainRL(model, reward_, did_, nnout_, images_):
         optimizer.apply_gradients(zip(gradients, model.trainable_variables))
 
 
-def trainRL1Sample(model, reward_, did_):
+def trainRL1Sample(model, actionOutcome, did):
     optimizer = tf.keras.optimizers.RMSprop(learning_rate=0.01, decay=0.99)
     # np load in target frames
-    # for each x
-    #   categorical cross entropy on the 2 images to get error
-    #   average these scores
-    #   update weights to minimise the error
-    for reward, did in zip(reward_, did_):
-        did = tf.convert_to_tensor(did, dtype= tf.float32)
+    for image in images:
         with tf.GradientTape() as t:
-            pass
+            error = tf.keras.losses.categorical_crossentropy(image, actionOutcome)
+            #   categorical cross entropy on the 2 images to get error
+            #   update weights to minimise the error
 
-        # gradients = t.gradient(lossComp, model.trainable_variables)
-        # optimizer.apply_gradients(zip(gradients, model.trainable_variables))
+        grads = t.gradient(error, model.trainable_variables)
+        optimizer.apply_gradients(zip(grads, model.trainable_variables))
 
     return model
 
-# reward = np.array(np.load('reward.npy'))
-# did = np.load('did.npy')
-# nnout = np.load('nnout.npy')
-# print(len(did[0]))
-# model = modelmake()
-# trainRL(model, reward, did, nnout)
+# todo: add shit here to load in all the pictures as training examples
+if __name__=='__main__':
+    os.chdir("HLP")
+    plt.imshow(np.load("avHLP.npy"))
+    plt.show()
