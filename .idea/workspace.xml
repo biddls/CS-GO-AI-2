@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7489195-bd07-4aac-8de4-0305db352674" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Training Script 2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HLP/testHLP.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RecScreen.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testScriptForFastItteration.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NN.py" beforeDir="false" afterPath="$PROJECT_DIR$/NN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLCS.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training Script 1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training Script 1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/did.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nnout.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reward.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training Script HLP.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training Script HLP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training Script HLP^.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training Script HLP^.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +63,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Biddls" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/HLP" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -75,42 +75,25 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\HLP" />
       <recent name="C:\Users\thoma\Downloads\GoTimer-master" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\HLP" />
+      <recent name="C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\useless" />
       <recent name="C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2" />
       <recent name="C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\getdat" />
       <recent name="C:\Users\thoma\Downloads\GoTimer-master\unless" />
-      <recent name="C:\Users\thoma\Downloads\GoTimer-master" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.NN">
-    <configuration name="LDSV" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.testScriptForFastItteration">
+    <configuration name="NN" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CS GO AI 2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LDSV.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="NN" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="CS GO AI 2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -126,7 +109,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Training Script HLP" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="RecScreen" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CS GO AI 2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -139,7 +122,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\Training Script HLP.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RecScreen.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -148,29 +131,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="screen_grab" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="CS GO AI 2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/getdat" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/getdat/screen_grab.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="cleanImages" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CS GO AI 2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -183,7 +144,51 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\useless\cleanImages.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cleanImages" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CS GO AI 2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\useless\cleanImages.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="testScriptForFastItteration" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CS GO AI 2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testScriptForFastItteration.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -194,11 +199,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.testScriptForFastItteration" />
+        <item itemvalue="Python.RecScreen" />
         <item itemvalue="Python.NN" />
-        <item itemvalue="Python.Training Script HLP" />
-        <item itemvalue="Python.screen_grab" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.LDSV" />
+        <item itemvalue="Python.cleanImages" />
       </list>
     </recent_temporary>
   </component>
@@ -271,7 +275,19 @@
       <workItem from="1610020609590" duration="89000" />
       <workItem from="1611875958837" duration="5823000" />
       <workItem from="1612436968232" duration="16000" />
-      <workItem from="1612532026991" duration="7138000" />
+      <workItem from="1612532026991" duration="7422000" />
+      <workItem from="1612552403165" duration="31000" />
+      <workItem from="1612552452577" duration="6000" />
+      <workItem from="1612552519291" duration="181000" />
+      <workItem from="1612605974811" duration="1498000" />
+      <workItem from="1612783892176" duration="1373000" />
+      <workItem from="1613834558100" duration="94000" />
+      <workItem from="1614118817755" duration="3583000" />
+      <workItem from="1614161469511" duration="1062000" />
+      <workItem from="1614165357822" duration="10002000" />
+      <workItem from="1614272825970" duration="3879000" />
+      <workItem from="1614331021702" duration="4243000" />
+      <workItem from="1614336963204" duration="2437000" />
     </task>
     <task id="LOCAL-00001" summary="stuff">
       <created>1585433696218</created>
@@ -468,9 +484,14 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$main.coverage" NAME="main Coverage Results" MODIFIED="1609917170830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CS_GO_AI_2$test.coverage" NAME="test Coverage Results" MODIFIED="1604952031684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$testScriptForFastItteration.coverage" NAME="testScriptForFastItteration Coverage Results" MODIFIED="1614338707035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$screen_grab.coverage" NAME="screen_grab Coverage Results" MODIFIED="1609644834500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/getdat" />
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$test.coverage" NAME="test Coverage Results" MODIFIED="1613834631324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$helping_todd_make_FO76.coverage" NAME="helping todd make FO76 Coverage Results" MODIFIED="1612784202396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$LDSV.coverage" NAME="LDSV Coverage Results" MODIFIED="1604708738192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$RecScreen.coverage" NAME="RecScreen Coverage Results" MODIFIED="1614334351352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$clean.coverage" NAME="clean Coverage Results" MODIFIED="1614200865716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$NN.coverage" NAME="NN Coverage Results" MODIFIED="1604412100960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$cleanImages__1_.coverage" NAME="cleanImages (1) Coverage Results" MODIFIED="1614203119168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

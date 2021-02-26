@@ -9,6 +9,12 @@ import os
 import matplotlib.pyplot as plt
 import cv2
 
+def getErr(img, target):
+    img = np.subtract(img, target)
+    img = np.abs(img)
+    img = np.average(img)
+    return img
+
 def paddPerams(shape, off):
     y1 = math.floor(shape[0] * off)
     y2 = math.floor(shape[0] * (1-off))
@@ -16,6 +22,7 @@ def paddPerams(shape, off):
     x2 = math.floor(shape[1] * (1-off))
 
     return [y1, y2, x1, x2]
+
 
 def saveNp():
     images = loadIm("training.npy")
@@ -28,6 +35,7 @@ def saveNp():
     temp = temp.astype(int)
     np.save("avHLP.npy", temp)
 
+
 def imgPrep():
     os.chdir("HLP")
     files = [x for x in os.listdir() if x[-4:] == '.png']
@@ -38,7 +46,7 @@ def imgPrep():
         frame = np.asarray(frame)
         frame = cv2.resize(frame, dsize=(96, 108), interpolation=cv2.INTER_LANCZOS4)
         dims = paddPerams(frame.shape, 0.2)
-        frame = frame[dims[0]:dims[1]][dims[2]:dims[3]]
+        frame = frame[dims[0]:dims[1], dims[2]:dims[3]]
         if temp is None:
             temp = frame
         else:
@@ -46,15 +54,16 @@ def imgPrep():
 
     np.save("training.npy", temp)
 
+
 def loadIm(path):
     os.chdir("HLP")
     return np.split(np.load(path), 6, axis= 1)
 
 
-def modelmake():
+def modelMake():
     #https://www.scitepress.org/papers/2018/67520/67520.pdf
     model = models.Sequential()
-    model.add(layers.Conv2D(16,  (3, 3), strides= 1,   activation='relu', input_shape=(108, 144, 3)))
+    model.add(layers.Conv2D(16,  (3, 3), strides= 1,   activation='relu', input_shape=(108, 96, 3)))
     model.add(layers.MaxPooling2D(pool_size=(2, 2), strides=2))
     model.add(layers.Conv2D(32,  (4, 4),  strides= 2,  activation='relu'))
     model.add(layers.Conv2D(16,   (5, 5),  strides= 2,  activation='linear'))
@@ -82,14 +91,15 @@ def trainRL(model, reward_, did_, nnout_, images_):
         optimizer.apply_gradients(zip(gradients, model.trainable_variables))
 
 
-def trainRL1Sample(model, actionOutcome, did):
+def trainRL1Sample(model, outcomeFrame, targetFrame, did):
     optimizer = tf.keras.optimizers.RMSprop(learning_rate=0.01, decay=0.99)
-    # np load in target frames
-    for image in images:
-        with tf.GradientTape() as t:
-            error = tf.keras.losses.categorical_crossentropy(image, actionOutcome)
-            #   categorical cross entropy on the 2 images to get error
-            #   update weights to minimise the error
+    # format outcome frame correctly
+    dims = paddPerams(outcomeFrame.shape, 0.2)
+    outcomeFrame = outcomeFrame[dims[0]:dims[1]][dims[2]:dims[3]]
+    with tf.GradientTape() as t:
+        # gets MAE between the outcome img and
+        error = getErr(outcomeFrame, targetFrame)
+        # update weights to minimise the error
 
         grads = t.gradient(error, model.trainable_variables)
         optimizer.apply_gradients(zip(grads, model.trainable_variables))
@@ -100,4 +110,7 @@ def trainRL1Sample(model, actionOutcome, did):
 if __name__=='__main__':
     os.chdir("HLP")
     plt.imshow(np.load("avHLP.npy"))
+    print(np.load("avHLP.npy").shape)
     plt.show()
+    
+    # loadIm("training.npy")

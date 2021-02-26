@@ -240,7 +240,7 @@ if __name__ == '__main__':
     if os.path.exists("RLCS.h5"):
         model = LDSV.loadWeights("RLCS.h5")
     else:
-        model = NN.modelmake()
+        model = NN.modelMake()
         LDSV.saveWeight(model, "RLCS.h5")
 
     print(model.summary())

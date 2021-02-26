@@ -105,12 +105,6 @@ class Capture(threading.Thread):
         return self.image
 
 
-@jit
-def softmax(x):  # softmax funciton
-    e_x = np.exp(x - np.max(x))
-    return e_x / e_x.sum()
-
-
 def action(probs):  # chooses what action to make
     r = random.random()
     index = 0
@@ -148,36 +142,17 @@ def sendinputs(do, shape):  # send inputs to cs
 
 
 def sendinputsMouseOnly(do):  # send inputs to cs
-        if do[2] == 1:
-            ctrls.shoot(1920 * do[0], 1080 * do[1])
-        else:
-            ctrls.moveMouse(1920 * do[0], 1080 * do[1])
-
-@jit
-def discount_rewards(r, gamma):  # backpropergates rewards w discount factor
-    pointer = 0
-    length = 0
-    for x in range(len(r) - 1, 0, -1):
-        if r[x] != 0:
-            pointer = r[x]
-        else:
-            r[x] = pointer * gamma ** (length + 1)
-            length += 1
-
-    return r
+    if do[2] == 1:
+        ctrls.shoot(1920 * do[0], 1080 * do[1])
+    else:
+        ctrls.moveMouse(1920 * do[0], 1080 * do[1])
 
 
 class agentBeginnerMouseOnlyTraining():
 
     def __init__(self, NNmodel):
-        self.HyperParams = {'discount factor': 0.98}  # discount factor
-        self.images = []
-        # self.NNOut = []
-        # self.NNOutputList = []
-        self.did = []
-        self.DidList = []
-        self.RewardList = []
         self.model = NNmodel
+        self.target = np.load('HLP/avHLP.npy')
 
     def start(self):
         # self.restart()#restarts cs go game
@@ -196,7 +171,7 @@ class agentBeginnerMouseOnlyTraining():
                     pass
 
                 # train model
-                self.model = NN.trainRL1Sample(self.model, temp, self.did)  # trains NN 1 step for each observation
+                self.model = NN.trainRL1Sample(self.model, temp, self.target, self.did)  # trains NN 1 step for each observation
 
                 counter += 1
                 if (time.time() - start) > 1:
@@ -223,7 +198,7 @@ if __name__ == '__main__':
     if os.path.exists("RLCS.h5"):
         model = LDSV.loadWeights("RLCS.h5")
     else:
-        model = NN.modelmake()
+        model = NN.modelMake()
         LDSV.saveWeight(model, "RLCS.h5")
 
     print(model.summary())
