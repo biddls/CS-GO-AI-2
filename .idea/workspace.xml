@@ -3,7 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="d7489195-bd07-4aac-8de4-0305db352674" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HLP/avHLP.npy" beforeDir="false" afterPath="$PROJECT_DIR$/HLP/avHLP.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HLP/testHLP.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HLP/training.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LDSV.py" beforeDir="false" afterPath="$PROJECT_DIR$/LDSV.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN.py" beforeDir="false" afterPath="$PROJECT_DIR$/NN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RLCS.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training Script HLP.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training Script HLP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getdat/ctrls.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdat/ctrls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testScriptForFastItteration.py" beforeDir="false" afterPath="$PROJECT_DIR$/testScriptForFastItteration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +89,7 @@
       <recent name="C:\Users\thoma\Downloads\GoTimer-master\unless" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.testScriptForFastItteration">
+  <component name="RunManager" selected="Python.Training Script HLP">
     <configuration name="NN" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CS GO AI 2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -117,6 +126,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RecScreen.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Training Script HLP" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CS GO AI 2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Training Script HLP.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -193,10 +224,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Training Script HLP" />
         <item itemvalue="Python.testScriptForFastItteration" />
+        <item itemvalue="Python.NN" />
         <item itemvalue="Python.cleanImages" />
         <item itemvalue="Python.RecScreen" />
-        <item itemvalue="Python.NN" />
       </list>
     </recent_temporary>
   </component>
@@ -289,6 +321,9 @@
       <workItem from="1614772469245" duration="562000" />
       <workItem from="1614774084357" duration="1953000" />
       <workItem from="1614790130472" duration="103000" />
+      <workItem from="1615134750954" duration="14379000" />
+      <workItem from="1615209094224" duration="7585000" />
+      <workItem from="1615237927580" duration="2044000" />
     </task>
     <task id="LOCAL-00001" summary="stuff">
       <created>1585433696218</created>
@@ -485,14 +520,15 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$main.coverage" NAME="main Coverage Results" MODIFIED="1609917170830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CS_GO_AI_2$testScriptForFastItteration.coverage" NAME="testScriptForFastItteration Coverage Results" MODIFIED="1614767852164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$Training_Script_HLP.coverage" NAME="Training Script HLP Coverage Results" MODIFIED="1615241017566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$testScriptForFastItteration.coverage" NAME="testScriptForFastItteration Coverage Results" MODIFIED="1615141510886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$screen_grab.coverage" NAME="screen_grab Coverage Results" MODIFIED="1609644834500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/getdat" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$test.coverage" NAME="test Coverage Results" MODIFIED="1613834631324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$helping_todd_make_FO76.coverage" NAME="helping todd make FO76 Coverage Results" MODIFIED="1612784202396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$LDSV.coverage" NAME="LDSV Coverage Results" MODIFIED="1604708738192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$RecScreen.coverage" NAME="RecScreen Coverage Results" MODIFIED="1614334351352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$clean.coverage" NAME="clean Coverage Results" MODIFIED="1614200865716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CS_GO_AI_2$NN.coverage" NAME="NN Coverage Results" MODIFIED="1604412100960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$NN.coverage" NAME="NN Coverage Results" MODIFIED="1615140355584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$cleanImages__1_.coverage" NAME="cleanImages (1) Coverage Results" MODIFIED="1614203119168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
