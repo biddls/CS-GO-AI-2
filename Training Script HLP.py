@@ -51,7 +51,7 @@ def actionMouseOnly(actions):  # chooses what action to make
 
 
 def sendInputsMouseOnly(do):  # send inputs to cs
-    do[:2] = [((x/2) + (random.random() - 0.5)/100) for x in do[:2]]
+    do[:2] = [(x/2) for x in do[:2]]
     if do[2] == 1:
         ctrls.shoot(1920 * do[0], 1080 * do[1])
     else:
@@ -86,7 +86,7 @@ class agentBeginnerMouseOnlyTraining():
 
             counter += 1
             if (time.time() - start) > 1:
-                # print("FPS: ", counter / (time.time() - start))
+                print("FPS: ", counter / (time.time() - start))
                 counter = 0
                 start = time.time()
                 pass

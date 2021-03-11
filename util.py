@@ -6,7 +6,7 @@ import cv2
 import matplotlib.pyplot as plt
 
 
-def trimPerams(img, off):
+def trimPeramsXY(img, x=0.41, y1=0.46, y2=0.35):
     if len(img.shape) == 4:
         shape = img.shape[1:]
         img = img[0]
@@ -15,22 +15,33 @@ def trimPerams(img, off):
     else:
         return None
 
-    y1 = math.floor(shape[0] * off)
-    y2 = math.floor(shape[0] * (1 - off))
-    x1 = math.floor(shape[1] * off)
-    x2 = math.floor(shape[1] * (1 - off))
+    y1 = math.floor(shape[0] * y1)
+    y2 = math.floor(shape[0] * (1 - y2))
+    x1 = math.floor(shape[1] * x)
+    x2 = math.floor(shape[1] * (1 - x))
 
-    dims = [y1, y2, x1, x2]
-    return img[dims[0]:dims[1], dims[2]:dims[3]]
+    img = img[y1:y2, x1:x2]
+
+    return img
+
+
+def grayFilter(img, minNumb=80, maxNumb=110):
+    for indexx, x in enumerate(img):
+        for indexy, y in enumerate(x):
+            if minNumb <= y[0] <= maxNumb and minNumb <= y[1] <= maxNumb and minNumb <= y[2] <= maxNumb:
+                img[indexx][indexy] = [0, 0, 0]
+
+    return img
 
 
 def getMAE(mae, img1, img2):
-    img1 = trimPerams(img1, 0.2)
+    img1 = trimPeramsXY(img1)
+    img1 = grayFilter(img1)
     return mae(img1, img2/255)
 
 
-def imgPrep():
-    os.chdir("HLP")
+def imgPrep(path):
+    os.chdir(path)
     files = [x for x in os.listdir() if x[-4:] == '.png']
     temp = None
     for file in files:
@@ -38,13 +49,18 @@ def imgPrep():
         frame = frame.convert("RGB")
         frame = np.asarray(frame)
         frame = cv2.resize(frame, dsize=(96, 108), interpolation=cv2.INTER_LANCZOS4)
-        frame = trimPerams(frame, 0.2)
+        frame = trimPeramsXY(frame)
         if temp is None:
             temp = frame / len(files)
         else:
             temp += frame / len(files)
 
+    temp = grayFilter(temp)
+
     temp = temp.astype(int)
-    np.save("avHLP.npy", temp)
+    # np.save("avHLP.npy", temp)
     plt.imshow(temp)
     plt.show()
+
+if __name__ == '__main__':
+    imgPrep("HLP")

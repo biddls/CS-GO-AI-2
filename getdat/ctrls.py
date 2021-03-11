@@ -58,7 +58,7 @@ def release(keys):
 
 def shoot(x, y):
     moveMouse(x, y)
-    pydirectinput.click()
+    # pydirectinput.click()
 
 
 def moveMouse(x, y):
