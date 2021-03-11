@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d7489195-bd07-4aac-8de4-0305db352674" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HLP/avHLP.npy" beforeDir="false" afterPath="$PROJECT_DIR$/HLP/avHLP.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN.py" beforeDir="false" afterPath="$PROJECT_DIR$/NN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Training Script HLP.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training Script HLP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training Script HLP^.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training Script HLP^.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getdat/cleanGSI.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdat/cleanGSI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/getdat/ctrls.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdat/ctrls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
     </list>
@@ -320,7 +320,7 @@
       <workItem from="1615209094224" duration="7585000" />
       <workItem from="1615237927580" duration="5008000" />
       <workItem from="1615299818039" duration="2988000" />
-      <workItem from="1615479799438" duration="2668000" />
+      <workItem from="1615479799438" duration="3583000" />
     </task>
     <task id="LOCAL-00001" summary="stuff">
       <created>1585433696218</created>

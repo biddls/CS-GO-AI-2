@@ -63,25 +63,16 @@ def clean(data):
     for x in range(len(key)):
         prnt.append([key[x], data[x]])
 
-    #print(prnt)
 
-key = ['ct rounds', 't rounds', 'round phase', 'bomb phase', 'players team', 'health', 'flashed', 'smoked',
-           'burning', 'round kills', 'round kills hs', 'kills', 'assists', 'deaths', 'mvps',
-           'score']
+key = ['ct rounds', 't rounds', 'round phase', 'bomb phase', 'players team', 'health',
+       'flashed', 'smoked', 'burning', 'round kills', 'round kills hs', 'kills',
+       'assists', 'deaths', 'mvps', 'score']
 
 def main(data):
     try:
         if data.get('player').get('state').get('health') > 0:#if alive (not spectating etc stuff)
             clean(data)
 
-        """else:
-            path = 'C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\data.txt'
-            dat = open(path, 'a+')
-
-            clean(data)
-            dat.write('DIED\r')
-
-            dat.close()"""
     except:
         open('C:\\Users\\thoma\\OneDrive\\Documents\\PycharmProjects\\CS GO AI 2\\data\\data.txt',
              "w+").close()

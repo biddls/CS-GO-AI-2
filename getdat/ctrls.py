@@ -1,3 +1,5 @@
+import random
+
 import keyboard as kbd
 import pyautogui
 import pydirectinput
@@ -8,6 +10,24 @@ pyautogui.FAILSAFE = False
 
 # width = 1920
 # height = 1080
+
+def actionMouseOnly(actions):  # chooses what action to make
+    r = random.random()
+    if r <= actions[2]:
+        actions[2] = 1
+    else:
+        actions[2] = 0
+    return actions
+
+
+def sendInputsMouseOnly(do):  # send inputs to cs
+    do[:2] = [(x/2) for x in do[:2]]
+    if do[2] == 1:
+        shoot(1920 * do[0], 1080 * do[1])
+    else:
+        moveMouse(1920 * do[0], 1080 * do[1])
+    return do
+
 
 def cscmd(cmd):
     try:
