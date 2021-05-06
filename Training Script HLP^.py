@@ -56,20 +56,20 @@ class agentBeginnerMouseOnlyTraining():
                 self.did = ctrls.actionMouseOnly(self.model.predict(observation)[0])  # ignore fn puts part of it though a soft max
                 ctrls.sendInputsMouseOnly(self.did)  # send inputs to cs go
 
-                # if get_data.new == False:  # same as earlier but the reward is 0 as it needs to be back filled
-                #     self.RewardList.append(0)
-                #     self.DidList.append(self.did)
-                #     # self.NNOutputList.append(self.NNOut)
-                #     self.images.append(observation)
-                #
-                # if self.RewardList != None and get_data.new == True:  # if theres a change in the GSI we care about
-                #     get_data.new = False  # let it knows its going to process the reward
-                #     self.RewardList.append(get_data.reward)
-                #     self.DidList.append(self.did)
-                #     # self.NNOutputList.append(self.NNOut)
-                #     self.images.append(observation)
-                #     ctrls.move('none')
-                #     self.RewardList = self.discount_rewards(self.RewardList, self.HyperParams['discount factor'])  # back propagates rewards w decay
+                if get_data.new == False:  # same as earlier but the reward is 0 as it needs to be back filled
+                    self.RewardList.append(0)
+                    self.DidList.append(self.did)
+                    # self.NNOutputList.append(self.NNOut)
+                    self.images.append(observation)
+
+                if self.RewardList != None and get_data.new == True:  # if theres a change in the GSI we care about
+                    get_data.new = False  # let it knows its going to process the reward
+                    self.RewardList.append(get_data.reward)
+                    self.DidList.append(self.did)
+                    # self.NNOutputList.append(self.NNOut)
+                    self.images.append(observation)
+                    ctrls.move('none')
+                    self.RewardList = self.discount_rewards(self.RewardList, self.HyperParams['discount factor'])  # back propagates rewards w decay
 
                 while temp := capture.getImg().all() == observation.all():
                     pass
@@ -111,7 +111,3 @@ if __name__ == '__main__':
              "w+").close()  # resets text file
         agentBeginnerMouseOnlyTraining(model).start()
         LDSV.saveWeight(model, "RLCS.h5")
-
-# todo: make more efficient by running the AI in a separate thread and it
-# todo: just returning its action and all this extra stuff is done else where
-# todo: https://github.com/403-Fruit/csctl

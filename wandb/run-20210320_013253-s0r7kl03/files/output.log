@@ -1,0 +1,31 @@
+(21, 17, 3)
+(65, 19, 3)
+Traceback (most recent call last):
+  File "C:/Users/thoma/OneDrive/Documents/PycharmProjects/CS GO AI 2/Training Script HLP.py", line 71, in <module>
+    agent.start()
+  File "C:/Users/thoma/OneDrive/Documents/PycharmProjects/CS GO AI 2/Training Script HLP.py", line 45, in start
+    self.model, error = NN.trainRL1Sample(self.model, observation, capture.getImg(), self.target, self.did)
+  File "C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\NN.py", line 27, in trainRL1Sample
+    error = util.getMAE(tf.keras.losses.MeanAbsoluteError(), resultOfAction, targetFrame)
+  File "C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\util.py", line 140, in getMAE
+    return mae(img1, img2/255)
+  File "C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 152, in __call__
+    losses = call_fn(y_true, y_pred)
+  File "C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 256, in call
+    return ag_fn(y_true, y_pred, **self._fn_kwargs)
+  File "C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1231, in mean_absolute_error
+    return K.mean(math_ops.abs(y_pred - y_true), axis=-1)
+  File "C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\venv\lib\site-packages\tensorflow\python\ops\math_ops.py", line 1164, in binary_op_wrapper
+    return func(x, y, name=name)
+  File "C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\venv\lib\site-packages\tensorflow\python\ops\math_ops.py", line 561, in subtract
+    return gen_math_ops.sub(x, y, name)
+  File "C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\venv\lib\site-packages\tensorflow\python\ops\gen_math_ops.py", line 10306, in sub
+    _ops.raise_from_not_ok_status(e, name)
+  File "C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 6862, in raise_from_not_ok_status
+    six.raise_from(core._status_to_exception(e.code, message), None)
+  File "<string>", line 3, in raise_from
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Incompatible shapes: [65,19,3] vs. [21,17,3] [Op:Sub]

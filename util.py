@@ -1,12 +1,12 @@
 import math
 import os
 import threading
-
 import PIL
 import d3dshot
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
+from random import random
 
 
 class WatchGSI(threading.Thread):  # GSI listener and parser
@@ -59,7 +59,6 @@ class WatchGSI(threading.Thread):  # GSI listener and parser
                     self.reward = difference[0] - difference[1]
                     self.reward = (self.reward / abs(self.reward))
                     self.new = True
-
 
 
 class Capture(threading.Thread):
@@ -133,10 +132,16 @@ def grayFilter(img, minNumb=80, maxNumb=110):
     return img
 
 
-def getMAE(mae, img1, img2):
+def getMAE(mae, img1, img2):  # returns the av difference between 2 images
     img1 = trimPeramsXY(img1)
     img1 = grayFilter(img1)
     return mae(img1, img2/255)
+
+def maxBrightness(img1):
+    img1 = trimPeramsXY(img1)
+    img1 = grayFilter(img1)
+    img1 = np.average(img1)
+    return img1
 
 
 def imgPrep(path):
@@ -157,9 +162,25 @@ def imgPrep(path):
     temp = grayFilter(temp)
 
     temp = temp.astype(int)
-    # np.save("avHLP.npy", temp)
+    np.save("avHLP.npy", temp)
     plt.imshow(temp)
     plt.show()
 
+
+def sample(dist):
+    a = random()
+    total = 0
+    for index, x in enumerate(dist):
+        if total + x < a:
+            total += x
+        else:
+            temp = [0 for x in range(7)]
+            temp[index] = 1
+            return [-0.2, -0.05, -0.01, 0, 0.01, 0.05, 0.2][index], temp
+
+
 if __name__ == '__main__':
-    imgPrep("HLP")
+    # imgPrep("HLP")
+    img = np.load('HLP\\avHLP.npy')
+    plt.imshow(img)
+    plt.show()

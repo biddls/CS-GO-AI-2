@@ -4,3 +4,4 @@ output.json
 venv
 .idea
 __pycache__
+/wandb
