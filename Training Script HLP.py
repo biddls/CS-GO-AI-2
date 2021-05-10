@@ -1,9 +1,7 @@
-import os
 import tensorflow as tf
 import NN
 import time
 from getdat import ctrls
-import numpy as np
 import LDSV
 from win32gui import GetWindowText, GetForegroundWindow
 from util import Capture
@@ -21,7 +19,6 @@ class agentBeginnerMouseOnlyTraining():
 
     def __init__(self, NNModel, FPS=False):
         self.model = NNModel
-        self.target = np.load('HLP\\avHLP.npy')
         self.did = None
         self.FPS = FPS
 
@@ -44,8 +41,7 @@ class agentBeginnerMouseOnlyTraining():
                         pass
 
                     # train model NN 1 step for each observation
-                    self.model, error = NN.trainRL1Sample(self.model, observation, capture.getImg(),
-                                                          self.target, self.did, norm)
+                    self.model, error = NN.trainRL1Sample(self.model, observation, capture.getImg(), self.did, norm)
                     try:
                         logging.log(error)
                     except:

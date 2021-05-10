@@ -19,10 +19,8 @@ def modelMake():
     return model
 
 
-def trainRL1Sample(mdl, inputFrame, resultOfAction, targetFrame, did, norm):
+def trainRL1Sample(mdl, inputFrame, resultOfAction, did, norm):
     optimizer = tf.keras.optimizers.RMSprop(learning_rate=0.001, decay=0.99)  # defines a basic optimiser
-    # returns a differentiable error term (i think) from between the 2 images
-    # errorBetweenImages = util.getMAE(tf.keras.losses.MeanAbsoluteError(), resultOfAction, targetFrame)
     errorBetweenImages = util.maxBrightness(resultOfAction)
     did = tf.reshape(tf.convert_to_tensor(did, tf.float16), (1, 14))
 

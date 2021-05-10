@@ -2,115 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7489195-bd07-4aac-8de4-0305db352674" name="Default Changelist" comment="saved version for rewrite">
-      <change afterPath="$PROJECT_DIR$/normalisation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wanb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013105-1hix12a2/files/config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013105-1hix12a2/files/output.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013105-1hix12a2/files/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013105-1hix12a2/files/wandb-metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013105-1hix12a2/files/wandb-summary.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013105-1hix12a2/logs/debug-internal.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013105-1hix12a2/logs/debug.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013105-1hix12a2/run-1hix12a2.wandb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013253-s0r7kl03/files/config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013253-s0r7kl03/files/output.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013253-s0r7kl03/files/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013253-s0r7kl03/files/wandb-metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013253-s0r7kl03/files/wandb-summary.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013253-s0r7kl03/logs/debug-internal.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013253-s0r7kl03/logs/debug.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013253-s0r7kl03/run-s0r7kl03.wandb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013359-2ftcfu76/files/config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013359-2ftcfu76/files/output.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013359-2ftcfu76/files/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013359-2ftcfu76/files/wandb-metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013359-2ftcfu76/files/wandb-summary.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013359-2ftcfu76/logs/debug-internal.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013359-2ftcfu76/logs/debug.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013359-2ftcfu76/run-2ftcfu76.wandb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013533-2739rahu/files/config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013533-2739rahu/files/output.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013533-2739rahu/files/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013533-2739rahu/files/wandb-metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013533-2739rahu/files/wandb-summary.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013533-2739rahu/logs/debug-internal.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013533-2739rahu/logs/debug.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013533-2739rahu/run-2739rahu.wandb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013901-21tz8ys3/files/config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013901-21tz8ys3/files/output.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013901-21tz8ys3/files/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013901-21tz8ys3/files/wandb-metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013901-21tz8ys3/files/wandb-summary.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013901-21tz8ys3/logs/debug-internal.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013901-21tz8ys3/logs/debug.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20210320_013901-21tz8ys3/run-21tz8ys3.wandb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CS GO AI 2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CS GO AI 2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Run AI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HLP/avHLP.npy" beforeDir="false" afterPath="$PROJECT_DIR$/HLP/avHLP.npy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NN.py" beforeDir="false" afterPath="$PROJECT_DIR$/NN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLCS.h5" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Training Script HLP.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training Script HLP.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training Script HLP^.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training Script HLP^.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getdat/ctrls.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdat/ctrls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/0.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/1.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/10.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/11.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/12.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/13.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/14.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/15.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/16.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/17.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/18.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/19.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/2.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/20.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/21.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/22.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/23.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/24.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/25.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/26.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/27.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/28.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/29.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/3.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/30.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/31.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/32.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/33.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/34.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/35.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/36.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/37.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/38.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/39.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/4.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/40.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/41.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/42.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/43.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/44.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/45.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/46.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/47.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/48.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/49.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/5.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/6.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/7.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/8.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test data set/9.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testScriptForFastItteration.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/useless/dataIn.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/useless/display live feed.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/useless/getdat.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/useless/getkeys.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/useless/imagetotrain.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/useless/train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training Script HLP^.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/normalisation.py" beforeDir="false" afterPath="$PROJECT_DIR$/normalisation.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +86,29 @@
       <recent name="C:\Users\thoma\Downloads\GoTimer-master\unless" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Training Script HLP">
+  <component name="RunManager" selected="Python.util">
+    <configuration name="Run AI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CS GO AI 2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Run AI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Training Script HLP" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CS GO AI 2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -256,28 +175,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="testScriptForFastItteration" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="CS GO AI 2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\thoma\OneDrive\Documents\PycharmProjects\CS GO AI 2\useless\testScriptForFastItteration.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="util" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CS GO AI 2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -302,18 +199,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.Training Script HLP" />
-      <item itemvalue="Python.testScriptForFastItteration" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.util" />
       <item itemvalue="Python.normalisation" />
+      <item itemvalue="Python.Run AI" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.util" />
+        <item itemvalue="Python.Run AI" />
         <item itemvalue="Python.Training Script HLP" />
         <item itemvalue="Python.normalisation" />
-        <item itemvalue="Python.util" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.testScriptForFastItteration" />
       </list>
     </recent_temporary>
   </component>
@@ -433,6 +330,10 @@
       <workItem from="1620140482806" duration="3844000" />
       <workItem from="1620223306650" duration="1708000" />
       <workItem from="1620314747635" duration="5146000" />
+      <workItem from="1620392682289" duration="1327000" />
+      <workItem from="1620579264565" duration="980000" />
+      <workItem from="1620588843974" duration="1746000" />
+      <workItem from="1620593336963" duration="3397000" />
     </task>
     <task id="LOCAL-00001" summary="stuff">
       <created>1585433696218</created>
@@ -632,12 +533,13 @@
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$normalisation.coverage" NAME="normalisation Coverage Results" MODIFIED="1620319280465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$NN.coverage" NAME="NN Coverage Results" MODIFIED="1615140355584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$main.coverage" NAME="main Coverage Results" MODIFIED="1609917170830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CS_GO_AI_2$Training_Script_HLP.coverage" NAME="Training Script HLP Coverage Results" MODIFIED="1620319357958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$Training_Script_HLP.coverage" NAME="Training Script HLP Coverage Results" MODIFIED="1620589152162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$testScriptForFastItteration.coverage" NAME="testScriptForFastItteration Coverage Results" MODIFIED="1615141510886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$clean.coverage" NAME="clean Coverage Results" MODIFIED="1614200865716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$RecScreen.coverage" NAME="RecScreen Coverage Results" MODIFIED="1614334351352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$Run_AI.coverage" NAME="Run AI Coverage Results" MODIFIED="1620590001160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$helping_todd_make_FO76.coverage" NAME="helping todd make FO76 Coverage Results" MODIFIED="1612784202396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CS_GO_AI_2$util.coverage" NAME="util Coverage Results" MODIFIED="1616262746382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS_GO_AI_2$util.coverage" NAME="util Coverage Results" MODIFIED="1620597716654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$screen_grab.coverage" NAME="screen_grab Coverage Results" MODIFIED="1609644834500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/getdat" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$test.coverage" NAME="test Coverage Results" MODIFIED="1616263914299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS_GO_AI_2$cleanImages__1_.coverage" NAME="cleanImages (1) Coverage Results" MODIFIED="1614203119168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
