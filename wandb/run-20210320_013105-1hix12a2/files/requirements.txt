@@ -50,7 +50,7 @@ pyrect==0.1.4
 pyscreeze==0.1.26
 python-dateutil==2.8.1
 pytweening==1.0.3
-pywin32==300
+pywin32==301
 pyyaml==5.4.1
 requests-oauthlib==1.3.0
 requests==2.25.1
